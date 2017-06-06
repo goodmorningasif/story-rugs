@@ -30,3 +30,8 @@
 </head>
 
 <body <?php body_class(); ?>>
+
+<!-- ==== SECTION: NAV ==== -->
+<nav>
+  <?php get_template_part('/components/nav/nav'); ?>
+</nav>

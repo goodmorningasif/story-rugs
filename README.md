@@ -118,6 +118,7 @@ Follow these steps to edit a current project. This will set up the repository an
 4. Use Migrate DB to fetch content from server
   * [ ]  Follow prompts 
 
+
 ### Deploying to Server
 1. In Liquid Web ...
   * [ ]  Create account for new site
