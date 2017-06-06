@@ -1,21 +1,21 @@
 {
-  "name": "INIT",
+  "name": "STORY-RUGS",
   "version": "1.0.0",
-  "description": "INIT",
+  "description": "Story Rugs Ecommerce Site v1.0",
   "main": "index.js",
   "scripts": {
     "test": "test"
   },
   "repository": {
     "type": "git",
-    "url": "INIT"
+    "url": "https://github.com/sdco-partners/story-rugs"
   },
   "author": "SDCO Partners",
   "license": "ISC",
   "bugs": {
-    "url": "INIT"
+    "url": "https://github.com/sdco-partners/story-rugs/issues"
   },
-  "homepage": "INIT",
+  "homepage": "http://www.storyrugs.com",
   "devDependencies": {
     "babel-preset-es2015": "^6.24.1",
     "gulp": "^3.9.1",

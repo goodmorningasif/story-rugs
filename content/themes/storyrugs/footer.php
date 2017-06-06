@@ -4,12 +4,18 @@
  *
  * Contans footer assets.
  *
- * @link [INIT]
+ * @link STORY RUGS
  *
- * @package [INIT]
+ * @package STORY RUGS
  * @subpackage Wordpress
  * @since 1.0
  * @version 1.0
  */
 
 ?>
+
+
+</body><!-- end -->
+</html>
+
+<?php wp_footer(); ?>

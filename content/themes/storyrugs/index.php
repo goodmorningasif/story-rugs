@@ -4,9 +4,9 @@
  *
  * The main template file
  *
- * @link [INIT]
+ * @link STORY RUGS
  *
- * @package [INIT]
+ * @package STORY RUGS
  * @subpackage Wordpress
  * @since 1.0
  * @version 1.0

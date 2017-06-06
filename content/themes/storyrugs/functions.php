@@ -4,9 +4,9 @@
  *
  * Smart functions
  *
- * @link [INIT]
+ * @link STORY RUGS
  *
- * @package [INIT]
+ * @package STORY RUGS
  * @subpackage Wordpress
  * @since 1.0
  * @version 1.0
@@ -16,8 +16,8 @@
 
   /* Define Variables  */
   $GLOBALS['url'] = get_template_directory_uri();
-  $GLOBALS['root'] = '10.1.10.96/[INIT]';
-  $GLOBALS['docpath'] = $_SERVER['DOCUMENT_ROOT'].'/[INIT]';
+  $GLOBALS['root'] = '10.1.10.96/story-rugs';
+  $GLOBALS['docpath'] = $_SERVER['DOCUMENT_ROOT'].'/story-rugs';
 
   /* Add Styles, Fonts, and Javascript */
   function my_enqueue_style() {
