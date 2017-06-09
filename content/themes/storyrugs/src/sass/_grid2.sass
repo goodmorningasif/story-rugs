@@ -1,0 +1,75 @@
+/*  _grid2.sass */
+
+/* PAGE CONTEXT -> For positioning items */
+/* includes positioning styles like display, padding, margin, height */
+/* INCEPTION RULE: DO NOT nest more than 4  */
+
+.grid_2
+  +flex
+  width: 80%
+  max-width: 970px
+  margin: 100px auto 0
+
+
+  .grid
+    flex: 0 0 auto
+
+
+  .grid:nth-child(n+3)
+    margin-top: 25px
+
+  .grid:nth-child(4n+3)
+    order: 2
+
+  .grid:nth-child(4n+4)
+    order: 1
+
+  .image-square, .copy-square
+    height: 475px
+    width: 475px
+
+
+.copy-square
+  a
+    display: block
+    margin: 0 auto
+    padding: 5px
+    margin-top: 20px
+
+/* OBJECTS -> For styling objects */
+/* Includes cosmetic styles like color, typography, and borders */
+/* INCEPTION RULE: DO NOT nest more than 4  */
+
+.grid 
+  background-color: $litegrey
+
+
+.image-square
+  +img
+  background-color: $darkgrey
+  transition: 0.4s all
+
+.copy-square
+  padding: 120px
+
+  h3
+    +millerbanner
+    color: $darkgrey
+    font-size: 1.6rem
+    line-height: 2.2rem
+    text-align: center
+  
+  a
+    +gothmed
+    color: $darkgrey
+    background-color: $litegrey
+    font-size: 0.65rem
+    letter-spacing: 0.05rem
+    text-align: center
+    text-transform: uppercase
+    transition: 0.4s background-color, 0.4s color
+
+    &:hover
+      background-color: $darkgrey
+      color: $litegrey
+

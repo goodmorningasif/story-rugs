@@ -1,5 +1,4 @@
 /* Resets & Tools */
-
 @import 'reset'
 
 @import 'mixins'
@@ -8,28 +7,43 @@
 
 
 /* SITE CONTEXT -> Global styles */
-
 h1, h2, h3, h5, a
-  @extend .sweet-m
-  text-transform: uppercase
-  letter-spacing: 0.05em
-  color: $black
 
 p
-  @extend .goth-b
-
 
 html 
+  font-size: 18px
   box-sizing: border-box
 
 *, *:before, *:after
   box-sizing: inherit
 
 body
+  border: 12px solid $black
+  padding: 16px
 
 img
   width: 100%
   box-sizing: border-box
 
-/* Styles ... */
 
+/* Global modules ... */  
+.border-box
+  border-style: solid
+  border-width: 6px
+  border-image: url('../assets/border-button.svg') 25% stretch
+  border-image-outset: 1px
+
+
+/* Styles ... */
+@import 'nav'
+
+@import 'foot'
+
+@import 'main'
+
+@import 'grid1'
+
+@import 'grid2'
+
+@import 'text'

@@ -1,0 +1,1 @@
+"use strict";function widont(t){t=t||".widont",$j(t).each(function(){var t=$j(this).text(),n=t.split(" ");n.length>1&&(/^\s*$/.test(n[n.length-1])&&n.pop(),n[n.length-2]+="&nbsp"+n[n.length-1],n.pop(),$j(this).html(n.join(" ")))})}var $j=jQuery.noConflict();$j(document).ready(function(){widont()});

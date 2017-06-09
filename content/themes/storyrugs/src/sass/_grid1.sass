@@ -1,0 +1,93 @@
+/*  _grid1.sass */
+
+/* PAGE CONTEXT -> For positioning items */
+/* includes positioning styles like display, padding, margin, height */
+/* INCEPTION RULE: DO NOT nest more than 4  */
+
+.grid_1
+  +column(2, 35px)
+  width: 80%
+  max-width: 1200px
+  margin: 170px auto 0
+
+
+.underline
+  margin-bottom: 100px
+  margin-top: -100px
+
+  h3
+    max-width: 380px
+    width: 100%
+    margin-left: 50px
+
+    span
+      padding-bottom: 4px
+
+
+.paragraph
+  h3
+    max-width: 340px
+    width: 100%
+    margin: 100px 80px 50px auto
+
+
+.signature
+  width: 150px
+  margin: 40px 50px 0 auto
+
+.pullquote
+  padding-bottom: 100px
+  max-width: 400px
+  width: 100%
+
+  h3
+    padding-left: 20px
+    padding-top: 50px
+
+.spacer 
+  width: 100%
+
+.spacer.single 
+  height: 100px
+
+.spacer.double 
+  height: 200px
+
+.spacer.triple 
+  height: 300px
+
+/* OBJECTS -> For styling objects */
+/* Includes cosmetic styles like color, typography, and borders */
+/* INCEPTION RULE: DO NOT nest more than 4  */
+
+.underline 
+  h3
+    +millerbanner
+    color: $darkgrey
+    font-size: 1.6rem
+    line-height: 3rem
+    text-transform: uppercase
+    letter-spacing: 0.1rem
+    widows: 3
+
+    span
+      border-bottom: 2px solid $darkgrey
+
+.paragraph
+  h3
+    +millerbanner
+    color: $darkgrey
+    font-size: 1.1rem
+    letter-spacing: 0.005rem
+    line-height: 1.7rem
+
+.pullquote
+  h3
+    +millerbanner
+    color: $black
+    font-size: 2.8rem
+    line-height: 1.2em
+
+
+.spacer
+  background-color: transparent

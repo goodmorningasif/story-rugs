@@ -1,0 +1,102 @@
+/*  _text.sass */
+
+/* PAGE CONTEXT -> For positioning items */
+/* includes positioning styles like display, padding, margin, height */
+/* INCEPTION RULE: DO NOT nest more than 4  */
+
+.text
+  width: 80%
+  max-width: 650px
+  margin: 0 auto
+
+.headcopy
+  margin-bottom: 60px
+  padding-bottom: 1px
+  position: relative
+
+  p
+    margin-top: 30px
+
+  &:after
+    position: absolute
+    bottom: 0
+    left: calc(50% - 34px)
+    width: 71px
+    height: 1px
+
+
+.copycta
+  > a
+    display: block
+    width: 180px
+    padding: 8px
+    margin: 30px auto
+  
+  h4
+    margin-top: 120px
+
+  p
+    margin-top: 35px    
+
+
+/* OBJECTS -> For styling objects */
+/* Includes cosmetic styles like color, typography, and borders */
+/* INCEPTION RULE: DO NOT nest more than 4  */
+
+.headcopy
+  h3
+    +millerbanner
+    color: $black
+    font-size: 2.8rem
+    line-height: 1.2em
+    text-align: center
+
+  p 
+    +millerbanner
+    color: $darkgrey
+    font-size: 1.1rem
+    letter-spacing: 0.005rem
+    line-height: 1.9rem
+    text-align: center
+
+  &:after
+    content: " "
+    background-color: $darkgrey
+
+.copycta
+  h3
+    +millerbanner
+    color: $black
+    font-size: 2.8rem
+    line-height: 1.2em
+    text-align: center
+
+  a, p
+    +gothbold
+    color: $darkgrey
+    background-color: $white
+    font-size: 0.85rem
+    letter-spacing: 0.09rem
+    text-align: center
+    text-transform: uppercase
+    transition: 0.4s background-color, 0.4s color
+
+  > a
+    &:hover
+      background-color: $darkgrey
+      color: $white
+
+  p
+    > a
+      transition: 0.4s color
+      &:hover
+        color: $rust
+
+  h4
+    +gothbold
+    color: $darkgrey
+    background-color: $white
+    font-size: 1.3rem
+    letter-spacing: 0.2rem
+    text-align: center
+    text-transform: uppercase   

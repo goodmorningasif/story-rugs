@@ -1,8 +1,8 @@
 <?php
 /** 
- * Index
+ * Template Name: Text
  *
- * The main template file
+ * The text template file
  *
  * @link STORY RUGS
  *
@@ -21,7 +21,7 @@ if(have_posts()) :
     the_post(); 
     $post_id = get_the_ID(); 
    
-    include(locate_template('components/main/main.php')); ?>
+    include(locate_template('components/text/text.php')); ?>
 
 <?php endwhile;endif;
 /* ==== END LOOP ==== */ ?>

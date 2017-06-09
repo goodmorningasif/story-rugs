@@ -1,0 +1,121 @@
+/*  _foot.sass */
+
+/* PAGE CONTEXT -> For positioning items */
+/* includes positioning styles like display, padding, margin, height */
+/* INCEPTION RULE: DO NOT nest more than 4  */
+
+footer
+  +flex
+  margin-top: 100px
+  margin-bottom: 100px
+
+  .social-links, .directory, .footer-signup
+    flex: 0 0 33%
+  
+.social-links-box
+  +flex
+  width: 80px
+  margin: 0 auto
+  
+  .icon
+    flex: 1 0 50%
+    height: 30px
+
+    svg
+      display: block
+      margin: 0 auto
+      width: 20px
+      height: 20px
+
+      .cls-1
+        transition: 0.4s fill
+
+    &:hover
+      svg
+        .cls-1
+          fill: $rust
+
+.directory
+  .logo
+    width: 250px
+    margin: 0 auto
+
+  .dir-links
+    margin: 20px auto
+    text-align: center
+  
+  .tagline
+    width: 310px
+    margin: 30px auto
+
+
+.footer-signup-box
+  width: 200px
+  margin: 0 auto
+
+  .foot-form
+    width: 100%
+    margin-top: 20px
+
+  .foot-form-signup
+    display: block
+    margin: 20px auto
+
+
+
+/* OBJECTS -> For styling objects */
+/* Includes cosmetic styles like color, typography, and borders */
+/* INCEPTION RULE: DO NOT nest more than 4  */
+
+.directory
+  .dir-links, .dir-links a
+    +gothbook
+    color: $darkgrey
+    font-size: 0.55rem
+    text-transform: uppercase
+    letter-spacing: 0.05rem
+    transition: 0.4s color
+  
+  .dir-links a
+    &:hover
+      color: $rust
+
+  .copyright, .copyright a
+    +millerbanner
+    color: $darkgrey
+    font-size: 0.55rem
+    text-align: center
+    transition: 0.4s color
+
+  .copyright a
+    &:hover
+      color: $rust
+
+.footer-signup-box
+  h3
+    +millerbanner
+    font-size: 0.75rem
+    text-align: center
+    letter-spacing: 0.05rem
+
+  .foot-form
+    border-top: none
+    border-left: none
+    border-right: none
+    border-bottom: 1px solid $darkgrey
+  
+  .foot-form-signup
+    +gothbook
+    background-color: $white
+    color: $darkgrey
+    font-size: 0.45rem
+    letter-spacing: 0.1rem
+    text-transform: uppercase
+    transition: 0.4s background-color, 0.4s color
+
+    &:hover
+      background-color: $darkgrey
+      color: $white
+
+
+

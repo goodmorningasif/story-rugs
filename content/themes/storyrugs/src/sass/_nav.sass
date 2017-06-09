@@ -1,0 +1,78 @@
+/*  _nav.sass */
+
+/* PAGE CONTEXT -> For positioning items */
+/* includes positioning styles like display, padding, margin, height */
+/* INCEPTION RULE: DO NOT nest more than 4  */
+
+nav
+  position: relative
+  
+  .logo 
+    width: 160px
+    padding-top: 30px
+    margin: 0 auto
+
+
+.customer-info
+  +flex
+  position: absolute
+  top: 50px
+  right: 100px
+  width: 200px
+  height: 30px
+
+  .total
+    padding-left: 4px
+    padding-right: 2px
+    margin-right: 5px
+
+
+.nav-links
+  +flex
+  width: 80%
+  max-width: 1200px
+  margin: 60px auto
+  padding-bottom: 4px
+
+  a
+    padding-bottom: 4px
+
+
+
+/* OBJECTS -> For styling objects */
+/* Includes cosmetic styles like color, typography, and borders */
+/* INCEPTION RULE: DO NOT nest more than 4  */
+
+.customer-info
+  .account, .cart
+    +garamond
+    font-size: 0.75rem
+    color: $darkgrey
+    cursor: pointer
+    text-transform: uppercase
+    letter-spacing: 0.15rem
+    transition: 0.4s color
+
+    &:hover
+      color: $rust
+
+  .total
+    +gothmed
+    color: $darkgrey
+
+
+.nav-links a 
+  +gothbold
+  color: $darkgrey
+  font-size: 0.75rem
+  text-transform: uppercase
+  letter-spacing: 0.2rem
+  border-bottom-style: solid
+  border-width: 6px
+  border-color: $white
+  border-image: url('../assets/border-button-white.svg') 25% stretch
+  transition: 0.4s border
+
+  &:hover
+	  border-image: url('../assets/border-button-rust.svg') 25% stretch
+

@@ -1,6 +1,5 @@
 /* Media Breakpoints & Mixins */
-
-$break-xlarge: 1300px
+$break-xlarge: 1400px
 $break-large: 1024px
 $break-medium: 900px
 $break-small: 500px
@@ -19,7 +18,6 @@ $break-small: 500px
     
 
 /* Flexbox */
-
 =flex($a: flex, $b: space-between, $c: flex-start, $d: wrap)
   display: $a
   justify-content: $b
@@ -33,7 +31,6 @@ $break-small: 500px
   background-size: $c
 
 /* Browser Detection  */
-
 =browser($browsers: Mozilla)
   @each $browser in $browsers
     html[data-browser*="#{$browser}"] &
@@ -50,3 +47,16 @@ $break-small: 500px
     @content
   &:-ms-input-placeholder
     @content
+
+/* Column Count  */
+=column($a, $b: 0)
+  -webkit-column-count: $a
+  -moz-column-count: $a
+  column-count: $a
+  -webkit-column-gap: $b
+  -moz-column-gap: $b
+  column-gap: $b
+
+
+
+  
