@@ -27,9 +27,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 	 	return;
 	 }
 
+  global $post, $product;
+
+	// price variable
+	$price = $product->get_price_html(); 
+  // dimensions
+	$dimensions = $product->get_attribute( 'dimensions' );
 ?>
 
 <div id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+  <div class="single-product-images">
+
+  </div>
 
 	<div class="summary entry-summary">
 
@@ -52,8 +62,22 @@ if ( ! defined( 'ABSPATH' ) ) {
 		  <?php echo get_the_title(); ?>
 		</h3>
 		<span class="desc">
-		      <?php echo get_the_excerpt(); ?>
-		    </span>
+		  <?php echo get_the_excerpt(); ?>
+		</span>
+	  <span class="price">
+	    <?php echo $price; ?>
+	  </span>	
+    <span class="desc">
+      <?php echo get_the_content(); ?>
+    </span>
+    
+    <h4>Dimension</h4>
+    <span class="dimensions">
+      <?php echo $dimensions; ?>
+    </span>
+    <span>
+    	<?php do_action('woocommerce_template_single_add_to_cart'); ?>
+    </span>
 
 	</div>
 
@@ -65,9 +89,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 		 * @hooked woocommerce_upsell_display - 15
 		 * @hooked woocommerce_output_related_products - 20
 		 */
-		do_action( 'woocommerce_after_single_product_summary' );
+		// do_action( 'woocommerce_after_single_product_summary' );
+		do_action( 'woocommerce_share' );
 	?>
 
 </div>
 
-<?php do_action( 'woocommerce_after_single_product' ); ?>
+<?php // do_action( 'woocommerce_after_single_product' ); ?>
