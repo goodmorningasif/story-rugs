@@ -209,7 +209,7 @@ function wc_generator_tag( $gen, $type ) {
  *
  * @param  array $classes
  * @return array
- */
+ */ 
 function wc_body_class( $classes ) {
 	$classes = (array) $classes;
 

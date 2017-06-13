@@ -20,36 +20,61 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-global $product;
+global $post, $product;
 
 // Ensure visibility
 if ( empty( $product ) || ! $product->is_visible() ) {
 	return;
 }
+// variables
+$title = get_the_title();
+$thumb_id = get_post_thumbnail_id();
+$thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
+$thumb_url = $thumb_url_array[0];
+$price = $product->get_price_html();
+
 ?>
+
 <li <?php post_class(); ?>>
+  <?php ?>
+  <a href="<?php get_the_permalink(); ?>" >
+    <div class="product-padding">
+		  <div class="product-wrapper" 
+		    style="background-image: url(<?php echo $thumb_url ?>)">
+		    <h3><?php echo $title; ?></h3>
+		    <?php if($product->is_on_sale()) :?>
+		      <span class="onsale">Sale!</span>	
+		    <?php endif; ?>
+			  <span class="price"><?php echo $price; ?></span>	
+			</div>
+		</div>
+	</a>
+</li>
+
+
 	<?php
 	/**
 	 * woocommerce_before_shop_loop_item hook.
 	 *
 	 * @hooked woocommerce_template_loop_product_link_open - 10
 	 */
-	do_action( 'woocommerce_before_shop_loop_item' );
-
+	// do_action( 'woocommerce_before_shop_loop_item' ); ?>
+  
+  <?php
 	/**
 	 * woocommerce_before_shop_loop_item_title hook.
 	 *
 	 * @hooked woocommerce_show_product_loop_sale_flash - 10
 	 * @hooked woocommerce_template_loop_product_thumbnail - 10
 	 */
-	do_action( 'woocommerce_before_shop_loop_item_title' );
+	// do_action( 'woocommerce_before_shop_loop_item_title' );
 
 	/**
 	 * woocommerce_shop_loop_item_title hook.
 	 *
 	 * @hooked woocommerce_template_loop_product_title - 10
 	 */
-	do_action( 'woocommerce_shop_loop_item_title' );
+	// do_action( 'woocommerce_shop_loop_item_title' );
 
 	/**
 	 * woocommerce_after_shop_loop_item_title hook.
@@ -57,7 +82,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	 * @hooked woocommerce_template_loop_rating - 5
 	 * @hooked woocommerce_template_loop_price - 10
 	 */
-	do_action( 'woocommerce_after_shop_loop_item_title' );
+	// do_action( 'woocommerce_after_shop_loop_item_title' );
 
 	/**
 	 * woocommerce_after_shop_loop_item hook.
@@ -65,6 +90,5 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	 * @hooked woocommerce_template_loop_product_link_close - 5
 	 * @hooked woocommerce_template_loop_add_to_cart - 10
 	 */
-	do_action( 'woocommerce_after_shop_loop_item' );
+	// do_action( 'woocommerce_after_shop_loop_item' );
 	?>
-</li>
