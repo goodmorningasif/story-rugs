@@ -14,9 +14,42 @@
 
   get_header(); ?>
 
+  <!-- ==== SECTION: PRODUCTS ==== -->
 
-<?php /* ==== START WOOCOMMERCE LOOP ==== */
-woocommerce_content();
-/* ==== END WOOCOMMERCE LOOP ==== */?>
+	<?php if ( is_singular( 'product' ) ) :
 
-<?php get_footer();
+		while ( have_posts() ) : 
+			the_post();
+
+			  wc_get_template_part( 'content', 'single-product' );
+
+		endwhile;
+
+	else :
+
+    /* ==== START WOOCOMMERCE LOOP ==== */
+		 if ( have_posts() ) : 
+
+			woocommerce_product_loop_start(); 
+				woocommerce_product_subcategories(); 
+
+				while ( have_posts() ) : the_post(); 
+
+					wc_get_template_part( 'content', 'product' ); 
+
+				endwhile; 
+
+			woocommerce_product_loop_end(); 
+			do_action( 'woocommerce_after_shop_loop' ); 
+
+		 /* ==== END WOOCOMMERCE LOOP ==== */
+
+		 elseif ( ! woocommerce_product_subcategories( array( 'before' => woocommerce_product_loop_start( false ), 'after' => woocommerce_product_loop_end( false ) ) ) ) : 
+
+			do_action( 'woocommerce_no_products_found' ); 
+
+		 endif;
+
+	endif;
+
+  get_footer();

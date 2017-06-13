@@ -106,4 +106,11 @@
       add_theme_support( 'woocommerce' );
   }
 
+  /**
+  *
+  * DISABLES WOOCOMMERCE DEFAULT CSS
+  *
+  */    
+  add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
+
 ?>

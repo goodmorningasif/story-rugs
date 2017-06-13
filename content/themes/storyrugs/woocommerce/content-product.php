@@ -2,13 +2,9 @@
 /**
  * The template for displaying product content within loops
  *
- * This template can be overridden by copying it to yourtheme/woocommerce/content-product.php.
+ * This template is overridding the default WooCommerce content-product.php file.
+ * You can find the original at to plugins/woocommerce/templates/content-product.php.
  *
- * HOWEVER, on occasion WooCommerce will need to update template files and you
- * (the theme developer) will need to copy the new files to your theme to
- * maintain compatibility. We try to do this as little as possible, but it does
- * happen. When this occurs the version of the template file will be bumped and
- * the readme will list any important changes.
  *
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @author  WooThemes
@@ -16,79 +12,49 @@
  * @version 3.0.0
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
-}
+	if ( ! defined( 'ABSPATH' ) ) {
+		exit; // Exit if accessed directly
+	}
 
-global $post, $product;
+	global $post, $product;
 
-// Ensure visibility
-if ( empty( $product ) || ! $product->is_visible() ) {
-	return;
-}
-// variables
-$title = get_the_title();
-$thumb_id = get_post_thumbnail_id();
-$thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
-$thumb_url = $thumb_url_array[0];
-$price = $product->get_price_html();
-
-?>
+	// Ensure visibility
+	if ( empty( $product ) || ! $product->is_visible() ) {
+		return;
+	}
+	
+	// thumbnail url
+	$thumb_id = get_post_thumbnail_id();
+	$thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
+	$thumb_url = $thumb_url_array[0];
+	
+	// price varialbe
+	$price = $product->get_price_html(); ?>
 
 <li <?php post_class(); ?>>
-  <?php ?>
-  <a href="<?php get_the_permalink(); ?>" >
-    <div class="product-padding">
-		  <div class="product-wrapper" 
-		    style="background-image: url(<?php echo $thumb_url ?>)">
-		    <h3><?php echo $title; ?></h3>
-		    <?php if($product->is_on_sale()) :?>
-		      <span class="onsale">Sale!</span>	
+
+  <a href="<?php echo get_the_permalink(); ?>" >
+	  <div class="product-image-wrapper" 
+	    style="background-image: url(<?php echo $thumb_url ?>)">
+
+      <div class="product-text">
+		    <h3>
+		      <?php echo get_the_title(); ?>
+		    </h3>
+		    <span class="desc">
+		      <?php echo get_the_excerpt(); ?>
+		    </span>
+	      <span class="onsale">
+		    <?php if(!$product->is_in_stock()) :?>
+		      Sold
 		    <?php endif; ?>
-			  <span class="price"><?php echo $price; ?></span>	
-			</div>
+		    </span>	
+			  <span class="price border-box">
+			    <?php echo $price; ?>
+			  </span>	
+		  </div>
+
 		</div>
 	</a>
+	
 </li>
-
-
-	<?php
-	/**
-	 * woocommerce_before_shop_loop_item hook.
-	 *
-	 * @hooked woocommerce_template_loop_product_link_open - 10
-	 */
-	// do_action( 'woocommerce_before_shop_loop_item' ); ?>
-  
-  <?php
-	/**
-	 * woocommerce_before_shop_loop_item_title hook.
-	 *
-	 * @hooked woocommerce_show_product_loop_sale_flash - 10
-	 * @hooked woocommerce_template_loop_product_thumbnail - 10
-	 */
-	// do_action( 'woocommerce_before_shop_loop_item_title' );
-
-	/**
-	 * woocommerce_shop_loop_item_title hook.
-	 *
-	 * @hooked woocommerce_template_loop_product_title - 10
-	 */
-	// do_action( 'woocommerce_shop_loop_item_title' );
-
-	/**
-	 * woocommerce_after_shop_loop_item_title hook.
-	 *
-	 * @hooked woocommerce_template_loop_rating - 5
-	 * @hooked woocommerce_template_loop_price - 10
-	 */
-	// do_action( 'woocommerce_after_shop_loop_item_title' );
-
-	/**
-	 * woocommerce_after_shop_loop_item hook.
-	 *
-	 * @hooked woocommerce_template_loop_product_link_close - 5
-	 * @hooked woocommerce_template_loop_add_to_cart - 10
-	 */
-	// do_action( 'woocommerce_after_shop_loop_item' );
-	?>
