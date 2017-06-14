@@ -11,9 +11,9 @@
  * @version     3.0.0
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
-}
+	if ( ! defined( 'ABSPATH' ) ) {
+		exit; // Exit if accessed directly
+	}
 
 	/**
 	 * woocommerce_before_single_product hook.
@@ -31,68 +31,92 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	// price variable
 	$price = $product->get_price_html(); 
+
   // dimensions
 	$dimensions = $product->get_attribute( 'dimensions' );
 ?>
 
-<div id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
+<div class="collection-wrapper">
+	<div id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-  <div class="single-product-images">
+	  <div class="co-images">
+	    <?php if(have_rows('co_repeater')) :
+	      while(have_rows('co_repeater')) :
+	      	the_row(); 
+	        $image = get_sub_field('co_repeater-image'); ?>
 
-  </div>
+	      <div class="wrapper">
+	        <div class="co-image"
+	          style="background-image: url(<?php echo $image['url']; ?>)">
+	        </div>
+	      </div>
 
-	<div class="summary entry-summary">
+	    <?php endwhile;endif; ?>
+	  </div>
 
-		<?php
-			/**
-			 * woocommerce_single_product_summary hook.
-			 *
-			 * @hooked woocommerce_template_single_title - 5
-			 * @hooked woocommerce_template_single_rating - 10
-			 * @hooked woocommerce_template_single_price - 10
-			 * @hooked woocommerce_template_single_excerpt - 20
-			 * @hooked woocommerce_template_single_add_to_cart - 30
-			 * @hooked woocommerce_template_single_meta - 40
-			 * @hooked woocommerce_template_single_sharing - 50
-			 * @hooked WC_Structured_Data::generate_product_data() - 60
-			 */
-			// do_action( 'woocommerce_single_product_summary' );
-		?>
-		<h3>
-		  <?php echo get_the_title(); ?>
-		</h3>
-		<span class="desc">
-		  <?php echo get_the_excerpt(); ?>
-		</span>
-	  <span class="price">
-	    <?php echo $price; ?>
-	  </span>	
-    <span class="desc">
-      <?php echo get_the_content(); ?>
-    </span>
-    
-    <h4>Dimension</h4>
-    <span class="dimensions">
-      <?php echo $dimensions; ?>
-    </span>
-    <span>
-    	<?php do_action('woocommerce_template_single_add_to_cart'); ?>
-    </span>
+		<div class="summary entry-summary co-content">
+		  <div class="co-head">
+				<h3>
+				  <?php echo get_the_title(); ?>
+				</h3>
+				<span class="desc">
+				  <?php echo get_the_excerpt(); ?>
+				</span>
+			</div>
+			<div class="co-details">
+			  <span class="price">
+			    <?php echo $price; ?>
+			  </span>	
+		    <span class="desc">
+		      <?php echo get_the_content(); ?>
+		    </span>
+		  </div>
+		  <div class="co-attributes">
+		    <h4>
+		      Dimension
+		    </h4>
+		    <span class="co-dimensions">
+		      <?php echo $dimensions; ?>
+		    </span>
+	    </div>
+	    <div class="co-cart">
+		    <span class="add-to-cart">
+		    	<?php do_action( 'woocommerce_' . $product->get_type() . '_add_to_cart' ); ?>
+		    	<?php // do_action('woocommerce_template_single_add_to_cart'); ?>
+		    </span>
+	    </div>
+	    <div class="co-share">
+		    <h4>
+		      Share
+		    </h4>
+		    <div class="social-wrapper">
+			    <div class="share">
+			      <a href="">
+			      <?php echo file_get_contents($GLOBALS['url'].'/assets/twit.svg'); ?>
+			      </a>
+			    </div>
+			    <div class="share">
+			      <a href="">
+			      <?php echo file_get_contents($GLOBALS['url'].'/assets/face.svg'); ?>
+			      </a>
+			    </div>
+			    <div class="share">
+			      <a href="">
+			      <?php echo file_get_contents($GLOBALS['url'].'/assets/pint.svg'); ?>
+			      </a>
+			    </div>
+			    <div class="share">
+			      <a href="">
+			      <?php echo file_get_contents($GLOBALS['url'].'/assets/mail.svg'); ?>
+			      </a>
+			    </div>
+		    </div>
+				<?php do_action( 'woocommerce_share' ); ?>
+	    </div>
+		</div>
+
 
 	</div>
-
-	<?php
-		/**
-		 * woocommerce_after_single_product_summary hook.
-		 *
-		 * @hooked woocommerce_output_product_data_tabs - 10
-		 * @hooked woocommerce_upsell_display - 15
-		 * @hooked woocommerce_output_related_products - 20
-		 */
-		// do_action( 'woocommerce_after_single_product_summary' );
-		do_action( 'woocommerce_share' );
-	?>
-
 </div>
 
-<?php // do_action( 'woocommerce_after_single_product' ); ?>
+<?php do_action( 'woocommerce_after_single_product' ); ?>

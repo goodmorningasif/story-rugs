@@ -1,0 +1,71 @@
+/*  _collectionDetails.sass */
+
+/* PAGE CONTEXT -> For positioning items */
+/* includes positioning styles like display, padding, margin, height */
+/* INCEPTION RULE: DO NOT nest more than 4  */
+
+
+.collection-wrapper
+  .product
+    +flex
+
+    .co-images
+      flex: 0 0 60%
+
+    .co-content
+      flex: 0 0 40%
+
+
+.co-images
+  position: relative
+  
+  &:before
+    position: absolute
+    width: 100%
+    height: 400px
+    margin-top: -400px
+    z-index: 1
+
+  .wrapper:first-of-type
+    height: 800px
+    padding: 0 75px 140px 75px
+
+    .co-image
+      width: 100%
+      height: 800px
+
+  .wrapper:nth-of-type(even)
+    margin-top: 15px
+    margin-bottom: 15px
+
+    .co-image
+      height: 730px
+      width: calc(100% + 15px)
+      margin-left: -15px
+      padding-right: 15px
+
+  .wrapper:nth-of-type(2n+3)
+    height: 800px
+    padding: 75px
+
+    .co-image
+      width: 100%
+      height: 650px
+
+/* OBJECTS -> For styling objects */
+/* Includes cosmetic styles like color, typography, and borders */
+/* INCEPTION RULE: DO NOT nest more than 4  */
+
+.co-images
+
+  &:before
+    content: " "
+    background-color: $litegrey
+
+  .wrapper
+    .co-image
+      +img
+
+  .wrapper:nth-of-type(odd)
+    background-color: $litegrey
+

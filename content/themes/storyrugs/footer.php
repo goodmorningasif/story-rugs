@@ -23,4 +23,12 @@
   <?php get_template_part('/components/footer/foot'); ?>
 </footer>
 
+<!-- ==== SECTION: BORDERS ==== -->
+<section class="borders">
+  <div class="top"></div>
+  <div class="right"></div>
+  <div class="bottom"></div>
+  <div class="left"></div>
+</section>
+
 <?php wp_footer(); ?>
