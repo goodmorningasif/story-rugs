@@ -59,25 +59,25 @@
 				<h3>
 				  <?php echo get_the_title(); ?>
 				</h3>
-				<span class="desc">
+				<span class="excerpt">
 				  <?php echo get_the_excerpt(); ?>
 				</span>
 			</div>
 			<div class="co-details">
-			  <span class="price">
+			  <div class="price">
 			    <?php echo $price; ?>
-			  </span>	
-		    <span class="desc">
+			  </div>	
+		    <div class="desc">
 		      <?php echo get_the_content(); ?>
-		    </span>
+		    </div>
 		  </div>
 		  <div class="co-attributes">
 		    <h4>
-		      Dimension
+		      Dimensions
 		    </h4>
-		    <span class="co-dimensions">
+		    <div class="co-dimensions">
 		      <?php echo $dimensions; ?>
-		    </span>
+		    </div>
 	    </div>
 	    <div class="co-cart">
 		    <span class="add-to-cart">
@@ -90,22 +90,22 @@
 		      Share
 		    </h4>
 		    <div class="social-wrapper">
-			    <div class="share">
+			    <div class="social-icon">
 			      <a href="">
 			      <?php echo file_get_contents($GLOBALS['url'].'/assets/twit.svg'); ?>
 			      </a>
 			    </div>
-			    <div class="share">
+			    <div class="social-icon">
 			      <a href="">
 			      <?php echo file_get_contents($GLOBALS['url'].'/assets/face.svg'); ?>
 			      </a>
 			    </div>
-			    <div class="share">
+			    <div class="social-icon">
 			      <a href="">
 			      <?php echo file_get_contents($GLOBALS['url'].'/assets/pint.svg'); ?>
 			      </a>
 			    </div>
-			    <div class="share">
+			    <div class="social-icon">
 			      <a href="">
 			      <?php echo file_get_contents($GLOBALS['url'].'/assets/mail.svg'); ?>
 			      </a>
