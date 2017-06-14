@@ -38,6 +38,8 @@
 
 	    /* ==== BLOCK: CUSTOM OFFERINGS ==== */
 	    if(get_row_layout() === 'grid_1-offerings') :
+        $row = 'grid_1-offerings';
+        include(locate_template('components/main/offerings-block.php'));
 	    endif; 
 
 	    /* ==== BLOCK: IMAGE BLOCK ==== */
