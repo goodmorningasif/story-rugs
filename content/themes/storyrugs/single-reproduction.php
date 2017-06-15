@@ -12,6 +12,8 @@
  * @version 1.0
  */
 
+  $template_id = 166;
+
   get_header(); ?>
 
 
@@ -22,12 +24,17 @@ if(have_posts()) :
     $post_id = get_the_ID(); 
    
     include(locate_template('components/main/main.php')); ?>
-
+    <?php echo $post_id; ?>
 <?php endwhile;endif;
 /* ==== END LOOP ==== */ ?>
 <!-- ==== SECTION: PURCHASE-FORM -->
 <section class="purchase-form">
   <?php include(locate_template('woocommerce/single-reproduction/purchase-form.php')); ?>
+</section>
+
+<!-- ==== SECTION: PURCHASE-FORM -->
+<section class="portfolio">
+  <?php include(locate_template('woocommerce/single-reproduction/portfolio.php')); ?>
 </section>
 
 
