@@ -1,8 +1,8 @@
 <?php
 /** 
- * Index
+ * Template Name: Woo Loop
  *
- * The main template file
+ * Custom loop for Woocommerce Acounts/Carts/&c.
  *
  * @link STORY RUGS
  *
@@ -12,6 +12,7 @@
  * @version 1.0
  */
 
+
   get_header();
 
 
@@ -19,9 +20,9 @@
 if(have_posts()) :
   while(have_posts()) :
     the_post(); 
-    $post_id = get_the_ID(); 
-   
-    include(locate_template('components/main/main.php'));
+    $post_id = get_the_ID(); ?>
+    <!-- ==== SECTION: WOO LOOP ==== -->
+    <?php the_content();
 
 endwhile;endif;
 /* ==== END LOOP ==== */

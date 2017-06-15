@@ -7,7 +7,45 @@
 
 .purchase-form
   width: 80%
-  margin: 0 auto
+  margin: 50px auto 0
+
+  .form-header
+    .form-tagline
+      max-width: 400px
+      margin: 20px auto
+
+  form
+    +flex
+    margin-top: 50px
+
+    .purchase
+      margin-bottom: 30px
+
+      +placeholder
+        padding-left: 20px
+    
+    input
+      height: 45px
+
+    .pname, .ptextarea
+      flex: 0 0 100%
+
+    .psize, .ppurpose
+      flex: 0 1 30%
+
+    .pemail, .pphone
+      flex: 1 0 calc(70% - 30px)
+      margin-left: 30px
+
+    .psubmit
+      flex: 0 0 auto
+      align-self: flex-end
+      margin-left: auto
+
+
+    .ptextarea
+      padding-top: 10px
+
 
 
 /* OBJECTS -> For styling objects */
@@ -17,4 +55,44 @@
 .purchase-form
   .form-header
     h3
-    
+	    +gothmed
+	    font-size: 0.8rem
+	    letter-spacing: 0.21rem
+	    text-align: center
+	    text-transform: uppercase
+
+
+  .form-tagline
+    +gothmed
+    font-size: 0.6rem
+    letter-spacing: 0.1rem
+    line-height: 1rem
+    text-transform: uppercase
+    text-align: center    
+
+
+  .purchase
+    +gothmed
+    color: $darkgrey
+    font-size: 0.6rem
+    letter-spacing: 0.1rem
+    line-height: 1rem
+    text-transform: uppercase
+    text-align: left
+
+    +placeholder
+      color: $darkgrey
+
+
+  .psubmit
+    font-size: 0.7rem
+    letter-spacing: 0.15rem
+    background-color: $darkgrey
+    color: $white
+    transition: 0.4s color, 0.4s background-color
+
+
+    &:hover
+      background-color: $white
+      color: $darkgrey
+

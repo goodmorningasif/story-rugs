@@ -1,0 +1,39 @@
+/*  _example-style.sass */
+
+/* PAGE CONTEXT -> For positioning items */
+/* includes positioning styles like display, padding, margin, height */
+/* INCEPTION RULE: DO NOT nest more than 4  */
+
+.content-head
+  width: 80%
+  margin: 0 auto 50px
+
+  h3
+    max-width: 550px
+    margin: 0 auto
+
+  .tagline
+    margin-top: 20px
+
+
+
+
+/* OBJECTS -> For styling objects */
+/* Includes cosmetic styles like color, typography, and borders */
+/* INCEPTION RULE: DO NOT nest more than 4  */
+
+.content-head
+  h3
+    +millerbanner
+    color: $black
+    font-size: 2.4rem
+    line-height: 1.2em
+    text-align: center
+
+  .tagline
+    +gothmed
+    font-size: 0.6rem
+    letter-spacing: 0.1rem
+    line-height: 1rem
+    text-transform: uppercase
+    text-align: center  

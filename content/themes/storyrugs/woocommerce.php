@@ -1,6 +1,6 @@
 <?php
 /** 
- * Template Name: WooCommerce Content
+ * Template Name: Woo Product Loop
  *
  * The WooCommerce Content template file
  *
@@ -23,6 +23,7 @@
 		endwhile;
 	else :
     /* ==== START WOOCOMMERCE LOOP ==== */
+     wc_get_template_part('content', 'head'); 
 		 if (have_posts()) : 
 			woocommerce_product_loop_start(); 
 				woocommerce_product_subcategories(); 
