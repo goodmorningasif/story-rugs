@@ -25,16 +25,10 @@ if(have_posts()) :
 
 <?php endwhile;endif;
 /* ==== END LOOP ==== */ ?>
+<!-- ==== SECTION: PURCHASE-FORM -->
 <section class="purchase-form">
-	<form>
-	  <input type="name" placeholder="name">
-	  <input type="text" placeholder="Size">
-	  <input type="email" placeholder="email">
-	  <input type="phone" placeholder="tel">
-	  <textarea rows="4" cols="50" placeholder="tell us about your story"></textarea>
-	  <input type="submit" value="Submit Inquiry">
-	</form>
-</input>
+  <?php include(locate_template('woocommerce/single-reproduction/purchase-form.php')); ?>
+</section>
 
 
 <?php get_footer();
