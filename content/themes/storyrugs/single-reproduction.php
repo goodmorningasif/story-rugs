@@ -22,11 +22,10 @@ if(have_posts()) :
   while(have_posts()) :
     the_post(); 
     $post_id = get_the_ID(); 
-   
     include(locate_template('components/main/main.php')); ?>
-    <?php echo $post_id; ?>
 <?php endwhile;endif;
 /* ==== END LOOP ==== */ ?>
+
 <!-- ==== SECTION: PURCHASE-FORM -->
 <section class="purchase-form">
   <?php include(locate_template('woocommerce/single-reproduction/purchase-form.php')); ?>
