@@ -15,45 +15,31 @@
  * @package 	WooCommerce/Templates
  * @version     3.0.0
  */
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
-}
 
-global $product;
+	if ( ! defined( 'ABSPATH' )) :
+		exit;
+	endif;
 
-if ( ! $product->is_purchasable() ) {
-	return;
-}
+	global $product;
 
-echo wc_get_stock_html( $product );
+	if ( ! $product->is_purchasable()) :
+		return;
+	endif;
 
-if ( $product->is_in_stock() ) : ?>
+	echo wc_get_stock_html( $product );
 
-	<?php do_action( 'woocommerce_before_add_to_cart_form' ); ?>
-
-	<form class="cart" method="post" enctype='multipart/form-data'>
-		<?php
-			/**
-			 * @since 2.1.0.
-			 */
-			do_action( 'woocommerce_before_add_to_cart_button' );
-
-			/**
-			 * @since 3.0.0.
-			 */
-			do_action( 'woocommerce_after_add_to_cart_quantity' );
-		?>
-
-		<button type="submit" name="add-to-cart" value="<?php echo esc_attr( $product->get_id() ); ?>" class="single_add_to_cart_button button alt border-box"><?php echo esc_html( $product->single_add_to_cart_text() ); ?></button>
-
-		<?php
-			/**
-			 * @since 2.1.0.
-			 */
-			do_action( 'woocommerce_after_add_to_cart_button' );
-		?>
-	</form>
-
-	<?php do_action( 'woocommerce_after_add_to_cart_form' ); ?>
-
-<?php endif; ?>
+	if ($product->is_in_stock()) :
+		do_action( 'woocommerce_before_add_to_cart_form' ); ?>
+		<form class="cart" method="post" 
+		  enctype='multipart/form-data'>
+			<?php do_action( 'woocommerce_before_add_to_cart_button' );
+				do_action( 'woocommerce_after_add_to_cart_quantity' ); ?>
+			<button type="submit" name="add-to-cart" 
+			  value="<?php echo esc_attr($product->get_id()); ?>" 
+			  class="single_add_to_cart_button button alt border-box">
+			  <?php echo esc_html($product->single_add_to_cart_text()); ?>
+			</button>
+			<?php do_action('woocommerce_after_add_to_cart_button'); ?>
+		</form>
+		<?php do_action('woocommerce_after_add_to_cart_form');
+	endif; ?>

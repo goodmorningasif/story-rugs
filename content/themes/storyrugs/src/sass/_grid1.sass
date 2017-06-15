@@ -8,12 +8,19 @@
   +column(2, 35px)
   width: 80%
   max-width: 1200px
-  margin: 170px auto 0
+  margin: 150px auto 0
+
+.grid_1
+  .underline:first-child
+    margin-top: -100px
+
+  .image-block:first-child
+    margin-top: 100px
 
 
 .underline
   margin-bottom: 100px
-  margin-top: -100px
+  margin-top: 100px
 
   h3
     max-width: 380px
@@ -43,6 +50,48 @@
   h3
     padding-left: 20px
     padding-top: 50px
+
+.offerings
+  max-width: 350px
+  margin: 75px auto 0
+
+.of-head
+  h3
+    position: relative
+    margin-top: 20px
+    margin-bottom: 35px
+
+    &:after
+      position: absolute
+      width: 70px
+      height: 2px
+      bottom: -25px
+      left: calc(50% - 35px)
+
+.of-content
+  margin-top: 30px
+
+  p
+    margin-top: 40px
+
+.of-pricing
+  margin-top: 30px
+
+  h4
+    margin-bottom: 10px
+
+.of-customization
+  margin-top: 30px
+
+  h4
+    margin-bottom: 10px
+
+  .custom-notes
+    max-width: 280px
+    margin: 0 auto
+  
+.of-additional-notes
+  margin-top: 30px
 
 .spacer 
   width: 100%
@@ -88,6 +137,83 @@
     font-size: 2.8rem
     line-height: 1.2em
 
+.offerings
+  text-align: center
+
+.of-head
+  .heading
+    +gothmed
+    font-size: 0.6rem
+    letter-spacing: 0.1rem
+    text-transform: uppercase
+    text-align: center
+
+  h3
+    +millerbanner
+    color: $black
+    font-size: 2.4rem
+    line-height: 1.2em
+    text-align: center
+    text-transform: lowercase
+
+    &:after
+      content: " "
+      background-color: $darkgrey
+
+  .monogram
+    +chronicitalic
+    font-size: 0.8rem
+    line-height: 1.5rem
+    letter-spacing: 0.01rem
+    text-align: center
+
+.of-content
+  p
+    +chronicrom
+    font-size: 1.1rem
+    line-height: 1.5rem
+    letter-spacing: 0.01rem
+    text-align: center
+
+.of-pricing
+  h4
+    +gothmed
+    font-size: 0.8rem
+    letter-spacing: 0.21rem
+    text-align: center
+    text-transform: uppercase
+
+  .price
+    +gothmed
+    font-size: 0.6rem
+    letter-spacing: 0.1rem
+    line-height: 1.3rem
+    text-transform: uppercase
+    text-align: center
+
+.of-customization
+  h4
+    +gothmed
+    font-size: 0.8rem
+    letter-spacing: 0.21rem
+    text-align: center
+    text-transform: uppercase
+
+  .custom-notes
+    +gothmed
+    font-size: 0.6rem
+    letter-spacing: 0.1rem
+    line-height: 1.3rem
+    text-transform: uppercase
+    text-align: center
+
+.of-additional-notes 
+  .additional-notes  
+    +chronicitalic
+    font-size: 0.8rem
+    line-height: 1.2rem
+    letter-spacing: 0.01rem
+    text-align: center  
 
 .spacer
   background-color: transparent

@@ -21,22 +21,18 @@
 	// Ensure visibility
 	if ( empty( $product ) || ! $product->is_visible() ) {
 		return;
-	}
-	
+	}	
 	// thumbnail url
 	$thumb_id = get_post_thumbnail_id();
 	$thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
 	$thumb_url = $thumb_url_array[0];
-	
-	// price varialbe
+	// price variable
 	$price = $product->get_price_html(); ?>
 
 <li <?php post_class(); ?>>
-
   <a href="<?php echo get_the_permalink(); ?>" >
 	  <div class="product-image-wrapper" 
 	    style="background-image: url(<?php echo $thumb_url ?>)">
-
       <div class="product-text">
 		    <h3>
 		      <?php echo get_the_title(); ?>
@@ -53,8 +49,6 @@
 			    <?php echo $price; ?>
 			  </span>	
 		  </div>
-
 		</div>
 	</a>
-	
 </li>
