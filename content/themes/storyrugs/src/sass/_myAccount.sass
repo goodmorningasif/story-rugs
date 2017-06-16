@@ -5,15 +5,270 @@
 /* INCEPTION RULE: DO NOT nest more than 4  */
 
 
-.woocommerce-MyAccount-Navigation
+.woocommerce-MyAccount-navigation
   width: 100%
-  height: 250px
+  padding: 20px 0
 
   ul
+    +flex($b: center)
+    max-width: 600px
+    margin: 0 auto 10px
+
+    &:after
+      position: absolute
+      bottom: 0
+      left: calc(50% - 34px)
+      width: 71px
+      height: 1px
+
+  li
+    flex: 0 0 auto
+    padding: 5px
+    margin-right: 10px
+    margin-left: 10px
+    margin-bottom: 20px
+
+
+.woocommerce-MyAccount-content
+  position: relative
+  width: 500px
+  margin: 50px auto 200px
+
+  .u-columns
     +flex
+    margin-top: 30px
+
+  .u-column1, .u-column2
+    flex: 0 0 48%
+
+.woocommerce-Address-title
+  .edit
+    display: block
+    margin: 15px auto 7px
+
+.woocommerce-EditAccountForm, .woocommerce-form-login, .u-column2 .register
+  label
+    display: block
+    margin-bottom: 10px
+
+  input
+    width: 70%
+    height: 40px
+    margin-bottom: 30px
+    padding-left: 20px
+
+  .woocommerce-Button
+    width: 170px
+    padding-left: 6px
+
+  fieldset
+    margin-top: 30px
+
+    legend
+      margin: 10px auto 20px
+
+.woocommerce
+  #customer_login
+    max-width: 600px
+    margin: 0 auto 10px
+
+    h2
+      margin-top: 30px
+      margin-bottom: 15px
+
+    input
+      display: block
+      margin-left: auto
+      margin-right: auto
+
+    .woocommerce-form__input-checkbox
+      display: inline-block
+      width: 15px
+      height: 15px
+      margin-bottom: 0
+      margin-right: 10px
+      padding: 0
+
+    .woocommerce-LostPassword
+
+  .u-column1, .u-column2
+    margin-bottom: 50px
+
+
+.woocommerce-password-hint
+  display: block
+  margin-top: 15px
+  margin-bottom: 40px
+
 
 /* OBJECTS -> For styling objects */
 /* Includes cosmetic styles like color, typography, and borders */
 /* INCEPTION RULE: DO NOT nest more than 4  */
 
-.woocommerce-MyAccount-Navigation
+.woocommerce-MyAccount-navigation
+
+  ul li a
+    +gothmed
+    color: $darkgrey
+    font-size: 0.7rem
+    letter-spacing: 0.1rem
+    line-height: 1rem
+    text-transform: uppercase
+    text-align: center  
+    transition: 0.4s color
+
+
+  ul
+    &:after
+      content: " "
+      background-color: $darkgrey
+
+  li
+    border-style: solid
+    border-width: 6px
+    border-image: url('../assets/border-button.svg') 25% stretch
+    border-image-outset: 1px
+    transition: 0.4s background-color
+
+    &:hover
+      background-color: $darkgrey
+
+      a
+        color: $white
+
+
+.woocommerce-MyAccount-content
+  p, 
+  .woocommerce-message, 
+  .woocommerce-Message
+    +millerbanner
+    color: $darkgrey
+    font-size: 1.1rem
+    letter-spacing: 0.005rem
+    line-height: 1.9rem
+    text-align: center
+
+    strong, a
+      color: $rust
+      transition: 0.4s color
+
+      &:hover
+        color: $darkgrey
+
+  .u-columns
+    h3, 
+    a
+      +gothmed
+      font-size: 0.75rem
+      letter-spacing: 0.1rem
+      text-align: center
+      text-transform: uppercase
+
+    a
+      color: $rust
+      font-size: 0.6rem
+      transition: 0.4s color
+
+      &:hover
+        color: $darkgrey
+    
+    address
+      +millerbanner
+      color: $darkgrey
+      font-size: 0.8rem
+      letter-spacing: 0.005rem
+      line-height: 1.2rem
+      text-align: center
+
+
+.woocommerce-EditAccountForm, 
+.woocommerce-form-login, 
+.u-column2 .register
+
+  label, 
+  .woocommerce-LostPassword
+    +millerbanner
+    color: $darkgrey
+    font-size: 1.1rem
+    letter-spacing: 0.005rem
+    line-height: 1.9rem
+    text-align: center
+    transition: 0.4s color
+
+    a
+      color: $rust
+
+      &:hover
+        color: $darkgrey
+
+  input,
+    +gothmed
+    color: $darkgrey
+    font-size: 0.6rem
+    letter-spacing: 0.1rem
+    line-height: 1rem
+    text-transform: uppercase
+    text-align: left
+    border-style: solid
+    border-width: 6px
+    border-image: url('../assets/border-button.svg') 25% stretch
+    border-image-outset: 1px
+    transition: 0.4s background-color    
+
+  .woocommerce-Button
+    background-color: $darkgrey
+    color: $white
+    text-align: center
+    transition: 0.4s background-color, 0.4s color
+
+    &:hover
+      background-color: $white
+      color: $darkgrey
+
+  fieldset
+
+    legend
+      +gothmed
+      font-size: 0.75rem
+      letter-spacing: 0.1rem
+      text-align: center
+      text-transform: uppercase
+  
+    
+.woocommerce
+  #customer_login
+    h2
+      +gothmed 
+      font-size: 0.75rem
+      letter-spacing: 0.1rem
+      text-align: center
+      text-transform: uppercase
+
+    .woocommerce-form__input-checkbox
+      -webkit-appearance: none;
+      appearance: none
+      border: 2px solid $darkgrey
+      border-radius: 9px
+      transition: 0.4s background-color 
+
+      &:checked
+        background-color: $rust
+
+.woocommerce-password-strength
+  +gothmed
+  font-size: 0.75rem
+  letter-spacing: 0.1rem
+  text-align: center
+  text-transform: uppercase
+
+.woocommerce-password-hint
+  +millerbanner
+  color: $darkgrey
+  font-size: 0.8rem
+  letter-spacing: 0.005rem
+  line-height: 1.2rem
+  text-align: center
+
+
+
+
