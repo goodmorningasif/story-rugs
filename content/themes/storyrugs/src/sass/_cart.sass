@@ -4,12 +4,133 @@
 /* includes positioning styles like display, padding, margin, height */
 /* INCEPTION RULE: DO NOT nest more than 4  */
 
-.woocommerce
-  .woocommerce-cart-form
-    max-width: 600px
-    margin: 0 auto 10px
+
+.woocommerce-cart-form
+  max-width: 800px
+  margin: 0 auto 10px
+
+  table
+    margin: 0 auto
+
+  tr
+    height: 15px
+
+  tbody
+
+    .product-remove,
+    .product-thumbnail,
+    .product-name,
+    .product-price,
+    .product-subtotal,
+    .product-quantity
+      padding: 20px
+
+    .product-quantity
+      input
+        width: 60px
+        padding: 5px
+
+.coupon
+  .input-text
+    padding: 5px
+    margin-left: 15px
+    margin-right: 15px
+
+
+
+
 
 
 /* OBJECTS -> For styling objects */
 /* Includes cosmetic styles like color, typography, and borders */
 /* INCEPTION RULE: DO NOT nest more than 4  */
+
+.woocommerce-cart-form
+  thead
+    tr
+
+
+    th
+      border-right: 1px solid $darkgrey
+
+    th:first-child,
+    th:nth-child(2),
+    th:last-child
+      border: none
+
+  tbody
+    tr 
+      border-bottom: 10px solid $white
+
+    .product-remove, 
+    .product-remove a
+      +gothmed
+      color: $rust
+      transition: 0.4s color
+
+      &:hover
+        color: $litegrey
+
+    .product-thumbnail
+      background-color: $litegrey
+
+    .product-name,
+    .product-name a
+      +millerbanner
+      color: $black
+      font-size: 1.6rem
+      letter-spacing: 0.005rem
+      line-height: 1.2rem
+      text-align: center
+      text-transform: lowercase
+      transition: 0.4s color
+
+      &:hover
+        color: $rust
+
+    .product-price, .product-subtotal
+      +millerbanner
+      color: $rust
+      font-size: 1rem
+      letter-spacing: 0.005rem
+      line-height: 1.2rem
+      text-align: center
+      text-transform: lowercase
+
+    .product-quantity
+      input
+        -webkit-appearance: none;
+        appearance: none
+        +gothmed
+        color: $darkgrey
+        font-size: 0.55rem
+        letter-spacing: 0.1rem
+        text-align: center
+        text-transform: uppercase
+        border: 2px solid $darkgrey
+
+    .actions
+      +millerbanner
+      color: $darkgrey
+      font-size: 1rem
+      letter-spacing: 0.005rem
+      line-height: 1.2rem
+      text-align: center
+
+.coupon
+  .input-text
+    +gothmed
+    color: $darkgrey
+    font-size: 0.55rem
+    letter-spacing: 0.1rem
+    text-align: center
+    text-transform: uppercase
+    border: 2px solid $darkgrey
+
+    +placeholder
+      // +gothmed
+
+
+
+
+  
