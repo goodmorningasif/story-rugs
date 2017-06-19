@@ -5,6 +5,74 @@
 /* INCEPTION RULE: DO NOT nest more than 4  */
 
 .woocommerce-info
+
+.checkout_coupon
+  max-width: 140px
+  margin: 20px auto
+
+  .input-text
+    padding: 5px
+
+  .form-row
+    margin-bottom: 20px
+
+.checkout.woocommerce-checkout
+  position: relative
+  width: 500px
+  margin: 20px auto 200px
+
+  h3
+    margin: 10px auto 20px
+
+  label
+    display: block
+    margin-bottom: 20px
+
+  input
+    width: 70%
+    height: 40px
+    margin-bottom: 30px
+    padding-left: 20px
+
+  .select2-container
+    width: 70% !important
+    margin: 0 auto
+
+  #billing_address_1_field, 
+  #billing_postcode_field
+    margin-top: 40px
+
+#order_comments
+  width: 70%
+
+
+.shop_table.woocommerce-checkout-review-order-table
+  margin: 30px auto
+
+  th, .product-name
+    width: 100px
+    height: 20px
+
+  td
+    width: 100px
+    height: 20px
+
+.checkout.woocommerce-checkout 
+  input
+    width: 70%
+    display: block
+    margin: 30px auto
+
+#order_review_heading, 
+.woocommerce-additional-fields
+  margin-top: 50px
+
+
+/* OBJECTS -> For styling objects */
+/* Includes cosmetic styles like color, typography, and borders */
+/* INCEPTION RULE: DO NOT nest more than 4  */
+
+.woocommerce-info
   +millerbanner
   color: $darkgrey
   font-size: 1.1rem
@@ -12,6 +80,129 @@
   line-height: 1.9rem
   text-align: center
 
-/* OBJECTS -> For styling objects */
-/* Includes cosmetic styles like color, typography, and borders */
-/* INCEPTION RULE: DO NOT nest more than 4  */
+  a
+    color: $rust
+    transition: 0.4s color
+
+    &:hover
+      color: $darkgrey
+
+.checkout_coupon
+  .input-text
+    +gothmed
+    color: $darkgrey
+    font-size: 0.55rem
+    letter-spacing: 0.1rem
+    text-align: center
+    text-transform: uppercase
+
+  input.button
+    +gothmed
+    color: $white
+    background-color: $darkgrey
+    font-size: 0.6rem
+    letter-spacing: 0.1rem
+    line-height: 1rem
+    text-transform: uppercase
+    text-align: left
+    border-style: solid
+    border-width: 6px
+    border-image: url('../assets/border-button.svg') 25% stretch
+    border-image-outset: 1px
+    transition: 0.4s background-color, 0.4s color   
+
+    &:hover
+      background-color: $white
+      color: $darkgrey
+
+.checkout.woocommerce-checkout
+  h3
+    +gothmed
+    font-size: 0.75rem
+    letter-spacing: 0.1rem
+    text-align: center
+    text-transform: uppercase
+
+  p
+    +millerbanner
+    color: $darkgrey
+    font-size: 1.1rem
+    letter-spacing: 0.005rem
+    line-height: 1.9rem
+    text-align: center
+    transition: 0.4s color
+
+  input
+    +gothmed
+    color: $darkgrey
+    font-size: 0.6rem
+    letter-spacing: 0.1rem
+    line-height: 1rem
+    text-transform: uppercase
+    text-align: left
+    border-style: solid
+    border-width: 6px
+    border-image: url('../assets/border-button.svg') 25% stretch
+    border-image-outset: 1px
+    transition: 0.4s background-color  
+
+  .select2-container
+    border: 2px solid $darkgrey
+
+.select2-container--default .select2-selection--single
+  border: none
+  border-width: 0
+
+.select2-container--default .select2-selection--single .select2-selection__arrow b
+  border-color: $darkgrey transparent transparent
+
+#order_comments
+  +gothmed
+  color: $darkgrey
+  font-size: 0.6rem
+  letter-spacing: 0.1rem
+  line-height: 1rem
+  text-transform: uppercase
+  text-align: left
+  border-style: solid
+  border-width: 6px
+  border-image: url('../assets/border-button.svg') 25% stretch
+  border-image-outset: 1px
+  transition: 0.4s background-color  
+
+.shop_table,
+.woocommerce-checkout-review-order-table
+  th
+    +gothmed
+    color: $darkgrey
+    font-size: 0.55rem
+    letter-spacing: 0.1rem
+    text-transform: uppercase
+    text-align: right
+    border-right: 20px solid $white
+
+  td
+    +millerbanner
+    color: $rust
+    font-size: 1rem
+    letter-spacing: 0.005rem
+    line-height: 1.2rem
+    text-align: left
+    text-transform: lowercase
+
+  .product-name
+    color: $black
+    text-align: right
+    border-right: 20px solid $white
+
+  .product-quantity
+    +gothmed
+    color: $darkgrey
+    font-size: 0.55rem
+    letter-spacing: 0.1rem
+    text-transform: uppercase
+    text-align: right
+
+.checkout.woocommerce-checkout 
+  input
+    background-color: $white
