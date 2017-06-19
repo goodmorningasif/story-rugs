@@ -31,14 +31,37 @@
         padding: 5px
 
 .coupon
+  margin-bottom: 20px
   .input-text
     padding: 5px
     margin-left: 15px
     margin-right: 15px
 
 
+.actions
+  padding-top: 60px
 
+.cart-collaterals
+  margin-top: 55px
 
+  .shop_table,
+  .shop_table_responsive
+    margin: 30px auto
+
+    th
+      width: 85px
+      height: 20px
+
+    td
+      width: 100px
+      height: 20px
+
+  .wc-proceed-to-checkout
+    margin-bottom: 150px
+
+.woocommerce-message,
+.woocommerce-error
+  padding: 50px
 
 
 /* OBJECTS -> For styling objects */
@@ -49,13 +72,17 @@
   thead
     tr
 
-
     th
+      +gothmed
+      color: $darkgrey
+      font-size: 0.55rem
+      letter-spacing: 0.1rem
+      text-transform: uppercase
       border-right: 1px solid $darkgrey
 
     th:first-child,
     th:nth-child(2),
-    th:last-child
+    th:last-of-type
       border: none
 
   tbody
@@ -116,6 +143,7 @@
       letter-spacing: 0.005rem
       line-height: 1.2rem
       text-align: center
+      border-top: 10px solid $white
 
 .coupon
   .input-text
@@ -125,12 +153,103 @@
     letter-spacing: 0.1rem
     text-align: center
     text-transform: uppercase
-    border: 2px solid $darkgrey
 
     +placeholder
       // +gothmed
 
+  input.button
+    +gothmed
+    color: $white
+    background-color: $darkgrey
+    font-size: 0.6rem
+    letter-spacing: 0.1rem
+    line-height: 1rem
+    text-transform: uppercase
+    text-align: left
+    border-style: solid
+    border-width: 6px
+    border-image: url('../assets/border-button.svg') 25% stretch
+    border-image-outset: 1px
+    transition: 0.4s background-color, 0.4s color   
+
+    &:hover
+      background-color: $white
+      color: $darkgrey
+
+.actions
+  > input.button
+    +gothmed
+    color: $darkgrey  
+    background-color: $white
+    font-size: 0.6rem
+    letter-spacing: 0.1rem
+    line-height: 1rem
+    text-transform: uppercase
+    text-align: left
+    border-style: solid
+    border-width: 6px
+    border-image: url('../assets/border-button.svg') 25% stretch
+    border-image-outset: 1px
+    transition: 0.4s background-color, 0.4s color   
+
+    &:hover
+      color: $white
+      background-color: $darkgrey
+
+.cart-collaterals
+  h2
+    +millerbanner
+    color: $darkgrey
+    font-size: 1.3rem
+    letter-spacing: 0.005rem
+    line-height: 1.2rem
+    text-align: center
+    text-align: center
 
 
+.cart-collaterals
+  .shop_table, 
+  .shop_table_responsive
+    th
+      +gothmed
+      color: $darkgrey
+      font-size: 0.55rem
+      letter-spacing: 0.1rem
+      text-transform: uppercase
+      text-align: right
+      border-right: 20px solid $white
 
-  
+    td
+      +millerbanner
+      color: $rust
+      font-size: 1rem
+      letter-spacing: 0.005rem
+      line-height: 1.2rem
+      text-align: left
+      text-transform: lowercase
+
+
+  .wc-proceed-to-checkout
+    +gothmed
+    font-size: 0.55rem
+    letter-spacing: 0.1rem
+    text-transform: uppercase
+    text-align: center
+    border-right: 20px solid $white
+
+    a
+      color: $darkgrey
+      transition: 0.4s color
+
+      &:hover
+        color: $rust
+
+.woocommerce-message,
+.woocommerce-error,
+.woocommerce-error li
+  +gothmed
+  font-size: 0.85rem
+  letter-spacing: 0.1rem
+  text-transform: uppercase
+  text-align: center
+  border-right: 20px solid $white
