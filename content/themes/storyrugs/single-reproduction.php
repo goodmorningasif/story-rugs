@@ -27,12 +27,12 @@ if(have_posts()) :
 /* ==== END LOOP ==== */ ?>
 
 <!-- ==== SECTION: PURCHASE-FORM -->
-<section class="purchase-form">
+<section class="purchase-form lazy">
   <?php include(locate_template('woocommerce/single-reproduction/purchase-form.php')); ?>
 </section>
 
-<!-- ==== SECTION: PURCHASE-FORM -->
-<section class="portfolio">
+<!-- ==== SECTION: GALLERY -->
+<section class="portfolio lazy">
   <?php include(locate_template('woocommerce/single-reproduction/portfolio.php')); ?>
 </section>
 

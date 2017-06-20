@@ -4,7 +4,7 @@
   */
 ?>
 
-<section class="content-head">
+<section class="content-head lazy">
 	<h3>
 		The significance of an heirloom rug is cultivated slowly over time. 
 	</h3>

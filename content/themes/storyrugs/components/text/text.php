@@ -6,7 +6,7 @@
 ?>
 
 <!-- ==== SECTION: TEXT BLOCKS ==== -->
-<section class="text">
+<section class="text lazy">
 	<?php if(have_rows('text')) : 
 	  while(have_rows('text')) :
 	  	the_row();

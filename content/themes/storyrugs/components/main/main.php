@@ -14,7 +14,7 @@
 
 <!-- ==== SECTION: GRID 1 ==== -->
 <?php if(have_rows('grid_1', $post_id)) : ?>
-  <section class="grid_1">
+  <section class="grid_1 lazy">
   <?php while(have_rows('grid_1', $post_id)) :
     the_row(); 
 
@@ -58,7 +58,7 @@
 
 <!-- ==== SECTION: GRID 2 ==== -->
 <?php if(have_rows('grid_2', $post_id)) : ?>
-  <section class="grid_2">
+  <section class="grid_2 lazy">
   <?php while(have_rows('grid_2', $post_id)) :
     the_row(); 
 

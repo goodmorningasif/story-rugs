@@ -31,7 +31,7 @@
 
 <li <?php post_class(); ?>>
   <a href="<?php echo get_the_permalink(); ?>" >
-	  <div class="product-image-wrapper" 
+	  <div class="product-image-wrapper lazy" 
 	    style="background-image: url(<?php echo $thumb_url ?>)">
       <div class="product-text">
 		    <h3>

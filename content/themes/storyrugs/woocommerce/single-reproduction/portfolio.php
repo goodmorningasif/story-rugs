@@ -10,14 +10,14 @@
 	Portfolio
 </h3>
 <?php if($gallery) : ?>
-  <div id="portfolio" class="gallery">
+  <div class="gallery">
     <ul class="images">
       <?php $count = 0; 
       foreach($gallery as $image) : ?>
 	      <li>
           <img src="<?php echo $image['url']; ?>"
             alt="<?php echo $image['alt']; ?>" 
-            class="image image-<?php echo $count; ?>"/>
+            class="image image-<?php echo $count; ?> lazy-gallery"/>
 	      </li>
       <?php $count++;endforeach; ?>
     </ul>
