@@ -20,8 +20,11 @@ html
   box-sizing: inherit
 
 body
-  padding: 18px
+  padding: 22px
   background-color: $white
+
+  +tablet
+    padding: 18px
 
 img
   width: 100%
@@ -35,6 +38,13 @@ img
   border-image: url('../assets/border-button.svg') 25% stretch
   border-image-outset: 1px
 
+.lazy
+  opacity: 0
+  transition: 0.6s opacity ease
+  transition-delay: 1.5s
+
+.load
+  opacity: 1
 
 /* Styles ... */
 @import 'borders'

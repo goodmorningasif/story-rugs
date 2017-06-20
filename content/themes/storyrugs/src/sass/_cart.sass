@@ -6,14 +6,26 @@
 
 
 .woocommerce-cart-form
-  max-width: 800px
+  width: 100%
   margin: 0 auto 10px
+
+  +tablet
+    max-width: 800px
 
   table
     margin: 0 auto
 
   tr
     height: 15px
+
+  thead
+    .product-remove,
+    .product-thumbnail,
+    .product-name,
+    .product-price,
+    .product-subtotal,
+    .product-quantity
+      display: none
 
   tbody
 
@@ -23,31 +35,55 @@
     .product-price,
     .product-subtotal,
     .product-quantity
-      padding: 20px
+      padding: 5px
+      border: none
+
+      +tablet
+        padding: 20px
 
     .product-quantity
       input
-        width: 60px
         padding: 5px
+        width: 25px
+
+        +tablet
+          width: 60px
+
+      +tablet
+        display: block
+
+.product-thumbnail,
+  display: none
+
+  +tablet
+    display: block
+
 
 .coupon
   margin: 2px auto
-  width: 400px
+  width: 200px
+
+  +tablet
+    width: 400px
 
   .input-text
     padding: 5px
-    margin-left: 15px
-    margin-right: 15px
 
+    +tablet
+      margin-left: 15px
+      margin-right: 15px
 
 
 .actions
-  padding-top: 60px
+
+  +tablet
+    padding-top: 60px
 
   > input:first-of-type
     margin: 20px auto
     width: 150px
     display: block
+
 
 .cart-collaterals
   margin-top: 55px
@@ -57,19 +93,34 @@
     margin: 30px auto
 
     th
-      width: 85px
-      height: 20px
+      +tablet
+        width: 85px
+        height: 20px
 
     td
-      width: 100px
-      height: 20px
+      +tablet
+        width: 100px
+        height: 20px
 
   .wc-proceed-to-checkout
-    margin-bottom: 150px
+  
+    +tablet
+      margin-bottom: 150px
+
 
 .woocommerce-message,
 .woocommerce-error
   padding: 50px
+
+
+.coupon
+  input.button
+    display: block
+    margin: 15px auto
+
+    +tablet
+      display: inline-block
+      margin: 0
 
 
 /* OBJECTS -> For styling objects */
@@ -82,11 +133,14 @@
       th
         +gothmed
         color: $darkgrey
-        font-size: 0.55rem
+        font-size: 0.4rem
         letter-spacing: 0.1rem
         text-transform: uppercase
         border-right: 1px solid $darkgrey
         text-align: center
+
+        +tablet
+          font-size: 0.55rem
 
       th:first-child,
       th:nth-child(2),
@@ -113,7 +167,7 @@
     .product-name a
       +millerbanner
       color: $black
-      font-size: 1.6rem
+      font-size: 1.1rem
       letter-spacing: 0.005rem
       line-height: 1.2rem
       text-align: center
@@ -123,7 +177,11 @@
       &:hover
         color: $rust
 
-    .product-price, .product-subtotal
+      +tablet
+        font-size: 1.6rem
+
+    .product-price, 
+    .product-subtotal
       +millerbanner
       color: $rust
       font-size: 1rem
@@ -131,6 +189,9 @@
       line-height: 1.2rem
       text-align: center
       text-transform: lowercase
+
+      +tablet
+        font-size: 1rem
 
     .product-quantity
       input
@@ -152,6 +213,7 @@
       line-height: 1.2rem
       text-align: center
       border-top: 10px solid $white
+
 
 .coupon
   .input-text
@@ -210,6 +272,7 @@
   > input:first-of-type
     text-align: center
 
+
 .cart-collaterals
   h2
     +millerbanner
@@ -236,11 +299,15 @@
     td
       +millerbanner
       color: $rust
-      font-size: 1rem
+      font-size: 0.7rem
       letter-spacing: 0.005rem
       line-height: 1.2rem
       text-align: left
       text-transform: lowercase
+
+      +tablet
+        font-size: 1rem
+
 
 .cart-collaterals
   .wc-proceed-to-checkout
@@ -256,6 +323,7 @@
 
       &:hover
         color: $rust
+
 
 .woocommerce-message,
 .woocommerce-error,

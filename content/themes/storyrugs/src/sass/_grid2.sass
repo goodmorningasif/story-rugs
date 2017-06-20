@@ -6,30 +6,53 @@
 
 .grid_2
   +flex
-  width: 80%
-  max-width: 970px
-  margin: 100px auto 0
+  width: 100%
+  margin: 50px auto 0
 
+  +tablet
+    width: 80%
+    max-width: 970px
+    margin: 100px auto 0
 
   .grid
-    flex: 0 0 auto
+    flex: 0 0 100%
 
+    +tablet
+      flex: 0 0 auto
 
   .grid:nth-child(n+3)
-    margin-top: 25px
+    +tablet
+      margin-top: 25px
 
   .grid:nth-child(4n+3)
-    order: 2
+    +tablet
+      order: 2
 
   .grid:nth-child(4n+4)
-    order: 1
+    +tablet
+      order: 1
 
-  .image-square, .copy-square
-    height: 475px
-    width: 475px
+  .image-square
+    height: 80vw
+    width: 80vw
 
+    +tablet
+      height: 475px
+      width: 475px
+
+  .copy-square
+    width: 80vw
+
+    +tablet
+      height: 475px
+      width: 475px
 
 .copy-square
+  padding: 35px 45px
+
+  +tablet
+    padding: 120px
+
   a
     display: block
     margin: 0 auto
@@ -49,22 +72,27 @@
   background-color: $darkgrey
   transition: 0.4s all
 
-.copy-square
-  padding: 120px
 
+.copy-square
   h3
     +millerbanner
     color: $darkgrey
-    font-size: 1.6rem
-    line-height: 2.2rem
+    font-size: 1rem
+    line-height: 1.6rem
     text-align: center
+
+    +tablet
+      font-size: 1.6rem
+      line-height: 2.2rem
+
   
   a
     +gothmed
     color: $darkgrey
     background-color: $litegrey
-    font-size: 0.65rem
+    font-size: 0.5rem
     letter-spacing: 0.05rem
+    line-height: 1.2rem
     text-align: center
     text-transform: uppercase
     transition: 0.4s background-color, 0.4s color
@@ -72,4 +100,7 @@
     &:hover
       background-color: $darkgrey
       color: $litegrey
+
+    +tablet
+      font-size: 0.65rem
 

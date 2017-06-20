@@ -7,7 +7,7 @@
 <?php if(get_field('page_banner', $post_id)) : 
   $banner = get_field('page_banner'); ?>
   <!-- ==== SECTION: PAGE BANNER ==== -->
-	<section class="page-banner" alt="<?php echo $banner['alt']; ?>"
+	<section class="page-banner lazy" alt="<?php echo $banner['alt']; ?>"
 	  style="background-image: url(<?php echo $banner['url']; ?>);">
 	</section>
 <?php endif; ?>

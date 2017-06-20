@@ -4,7 +4,6 @@
   */
 ?>
 
-<!-- ==== SECTION: CONTENT-HEAD ==== -->
 <section class="content-head">
 	<h3>
 		The significance of an heirloom rug is cultivated slowly over time. 

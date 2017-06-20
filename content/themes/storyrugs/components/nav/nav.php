@@ -9,16 +9,22 @@
 
 <div class="customer-info">
 	<div class="account">
-	  Account
+    <a href="http://<?php echo $GLOBALS['root']; ?>/my-account">
+  	  Account
+    </a>
   </div>
 	<div class="cart">
 		<span class="total border-box">0</span>
-		Cart
+    <a href="http://<?php echo $GLOBALS['root']; ?>/cart">
+  		Cart
+    </a>
 	</div>
 </div>
 
 <div class="logo">
-  <?php echo file_get_contents($logo['url']); ?>
+  <a href="http://<?php echo $GLOBALS['root']; ?>">
+    <?php echo file_get_contents($logo['url']); ?>
+  </a>
 </div>
 
 <div class="nav-links">

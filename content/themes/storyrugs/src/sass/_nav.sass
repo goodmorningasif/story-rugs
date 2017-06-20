@@ -10,17 +10,25 @@ nav
   
   .logo 
     width: 160px
-    padding-top: 30px
+    padding-top: 100px
     margin: 0 auto
+
+    +tablet
+      padding-top: 30px
 
 
 .customer-info
   +flex
   position: absolute
-  top: 50px
-  right: 100px
+  top: 25px
+  right: calc(50% - 100px)
   width: 200px
   height: 30px
+
+  +tablet
+    top: 50px
+    right: 100px
+
 
   .total
     padding-left: 4px
@@ -30,13 +38,24 @@ nav
 
 .nav-links
   +flex
-  width: 80%
-  max-width: 1200px
+  width: 100%
+  max-width: 150px
   margin: 60px auto
   padding-bottom: 4px
 
+  +tablet
+    width: 80%
+    max-width: 1200px
+
+
   a
     padding-bottom: 4px
+    margin-bottom: 8px
+    width: 100%
+
+    +tablet
+      margin-bottom: 0
+      width: initial
 
 
 
@@ -45,7 +64,7 @@ nav
 /* INCEPTION RULE: DO NOT nest more than 4  */
 
 .customer-info
-  .account, .cart
+  .account, .cart, .account a, .cart a
     +garamond
     font-size: 0.75rem
     color: $darkgrey
@@ -65,15 +84,19 @@ nav
 .nav-links a 
   +gothbold
   color: $darkgrey
-  font-size: 0.75rem
+  font-size: 0.6rem
   text-transform: uppercase
   letter-spacing: 0.2rem
   border-bottom-style: solid
+  text-align: center
   border-width: 6px
   border-color: $white
   border-image: url('../assets/border-button-white.svg') 25% stretch
   transition: 0.4s border
 
   &:hover
-	  border-image: url('../assets/border-button-rust.svg') 25% stretch
+    border-image: url('../assets/border-button-rust.svg') 25% stretch
+
+  +tablet
+    font-size: 0.75rem
 

@@ -31,16 +31,26 @@
       flex: 0 0 100%
 
     .psize, .ppurpose
-      flex: 0 1 30%
+      flex: 0 0 100%
+
+      +tablet
+        flex: 0 1 30%
 
     .pemail, .pphone
-      flex: 1 0 calc(70% - 30px)
-      margin-left: 30px
+      flex: 0 0 100%
+
+      +tablet
+        flex: 1 0 calc(70% - 30px)
+        margin-left: 30px
 
     .psubmit
-      flex: 0 0 auto
-      align-self: flex-end
-      margin-left: auto
+      flex: 0 0 100%
+      padding-left: 0
+
+      +tablet
+        flex: 0 0 auto
+        margin-left: auto
+        align-self: flex-end
 
 
     .ptextarea
@@ -55,12 +65,12 @@
 .purchase-form
   .form-header
     h3
-	    +gothmed
-	    font-size: 0.8rem
-	    letter-spacing: 0.21rem
-	    text-align: center
-	    text-transform: uppercase
-
+      +gothmed
+      font-size: 0.8rem
+      letter-spacing: 0.21rem
+      line-height: 1.2rem
+      text-align: center
+      text-transform: uppercase
 
   .form-tagline
     +gothmed
@@ -87,6 +97,7 @@
   .psubmit
     font-size: 0.7rem
     letter-spacing: 0.15rem
+    text-align: center
     background-color: $darkgrey
     color: $white
     transition: 0.4s color, 0.4s background-color

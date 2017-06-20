@@ -4,7 +4,6 @@
 /* includes positioning styles like display, padding, margin, height */
 /* INCEPTION RULE: DO NOT nest more than 4  */
 
-.woocommerce-info
 
 .checkout_coupon
   max-width: 140px
@@ -16,17 +15,26 @@
   .form-row
     margin-bottom: 20px
 
+
 .checkout.woocommerce-checkout
   position: relative
-  width: 500px
-  margin: 20px auto 200px
+  width: 100%
+  margin: 30px auto
+
+  +tablet
+    width: 500px
+    margin: 20px auto 200px
 
   h3
     margin: 10px auto 20px
 
   label
     display: block
-    margin-bottom: 20px
+    margin-bottom: 5px
+    
+    +tablet
+      margin-bottom: 20px
+
 
   input
     width: 70%
@@ -41,6 +49,7 @@
   #billing_address_1_field, 
   #billing_postcode_field
     margin-top: 40px
+
 
 #order_comments
   width: 70%
@@ -57,14 +66,23 @@
     width: 100px
     height: 20px
 
+
 .checkout.woocommerce-checkout 
   input
     width: 70%
     display: block
-    margin: 30px auto
+    margin: 5px auto
+
+    +tablet
+      margin: 30px auto
+
 
 #order_review_heading, 
 .woocommerce-additional-fields
+  margin-top: 50px
+
+#place_order
+  padding: 0
   margin-top: 50px
 
 
@@ -86,6 +104,7 @@
 
     &:hover
       color: $darkgrey
+
 
 .checkout_coupon
   .input-text
@@ -114,6 +133,7 @@
     &:hover
       background-color: $white
       color: $darkgrey
+
 
 .checkout.woocommerce-checkout
   h3
@@ -149,12 +169,15 @@
   .select2-container
     border: 2px solid $darkgrey
 
+
 .select2-container--default .select2-selection--single
   border: none
   border-width: 0
 
+
 .select2-container--default .select2-selection--single .select2-selection__arrow b
   border-color: $darkgrey transparent transparent
+
 
 #order_comments
   +gothmed
@@ -169,6 +192,7 @@
   border-image: url('../assets/border-button.svg') 25% stretch
   border-image-outset: 1px
   transition: 0.4s background-color  
+
 
 .shop_table,
 .woocommerce-checkout-review-order-table
@@ -203,6 +227,18 @@
     text-transform: uppercase
     text-align: right
 
+
 .checkout.woocommerce-checkout 
   input
     background-color: $white
+
+.place-order
+  #place_order
+    background-color: $darkgrey
+    color: $white
+    text-align: center
+    transition: 0.4s color, 0.4s background-color
+
+    &:hover
+      background-color: $white
+      color: $darkgrey

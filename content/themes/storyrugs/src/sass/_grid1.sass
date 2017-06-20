@@ -5,27 +5,46 @@
 /* INCEPTION RULE: DO NOT nest more than 4  */
 
 .grid_1
-  +column(2, 35px)
-  width: 80%
-  max-width: 1200px
-  margin: 150px auto 0
+  +column(1)
+  width: 100%
+  margin: 0 auto
+
+  +tablet
+    margin: 150px auto 0
+
+  +tablet
+    +column(2, 35px)
+    width: 80%
+    max-width: 1200px
+
 
 .grid_1
   .underline:first-child
-    margin-top: -100px
+    +tablet
+      margin-top: -100px
 
   .image-block:first-child
-    margin-top: 100px
+    +tablet
+      margin-top: 100px
 
 
 .underline
-  margin-bottom: 100px
-  margin-top: 100px
+  margin-top: 50px
+  margin-bottom: 50px
+  margin-left: 5px
+
+  +tablet
+    margin-top: 100px
+    margin-bottom: 100px
+    margin-left: 0
 
   h3
-    max-width: 380px
     width: 100%
-    margin-left: 50px
+    max-width: 360px
+
+    +tablet
+      max-width: 380px
+      margin-left: 50px
 
     span
       padding-bottom: 4px
@@ -33,27 +52,38 @@
 
 .paragraph
   h3
-    max-width: 340px
     width: 100%
-    margin: 100px 80px 50px auto
+    margin-top: 50px
+
+    +tablet
+      max-width: 340px
+      margin: 100px 80px 50px auto
 
 
 .signature
   width: 150px
   margin: 40px 50px 0 auto
 
+
 .pullquote
-  padding-bottom: 100px
-  max-width: 400px
   width: 100%
 
+  +tablet
+    max-width: 400px
+    padding-bottom: 100px
+
   h3
-    padding-left: 20px
     padding-top: 50px
+    padding-left: 5px
+
+    +tablet
+      padding-left: 20px
+
 
 .offerings
   max-width: 350px
   margin: 75px auto 0
+
 
 .of-head
   h3
@@ -68,17 +98,33 @@
       bottom: -25px
       left: calc(50% - 35px)
 
+
+.image-block
+  // display: none
+  height: 350px
+  overflow: hidden
+  margin-top: 30px
+
+  +tablet
+    display: block
+    margin-bottom: 0
+    margin-top: 0
+    height: 100%
+
+
 .of-content
   margin-top: 30px
 
   p
     margin-top: 40px
 
+
 .of-pricing
   margin-top: 30px
 
   h4
     margin-bottom: 10px
+
 
 .of-customization
   margin-top: 30px
@@ -89,21 +135,29 @@
   .custom-notes
     max-width: 280px
     margin: 0 auto
+
   
 .of-additional-notes
   margin-top: 30px
 
+
 .spacer 
   width: 100%
 
+
 .spacer.single 
-  height: 100px
+  +tablet
+    height: 100px
+
 
 .spacer.double 
-  height: 200px
+  +tablet
+    height: 200px
+
 
 .spacer.triple 
-  height: 300px
+  +tablet
+    height: 300px
 
 /* OBJECTS -> For styling objects */
 /* Includes cosmetic styles like color, typography, and borders */
@@ -113,11 +167,15 @@
   h3
     +millerbanner
     color: $darkgrey
-    font-size: 1.6rem
-    line-height: 3rem
+    font-size: 0.9rem
+    line-height: 2.2rem
     text-transform: uppercase
     letter-spacing: 0.1rem
     widows: 3
+
+    +tablet
+      font-size: 1.6rem
+      line-height: 3rem
 
     span
       border-bottom: 2px solid $darkgrey
@@ -134,8 +192,12 @@
   h3
     +millerbanner
     color: $black
-    font-size: 2.8rem
-    line-height: 1.2em
+    font-size: 1.5rem
+    line-height: 1.7em
+
+    +tablet
+      font-size: 2.8rem
+      line-height: 1.2em
 
 .offerings
   text-align: center

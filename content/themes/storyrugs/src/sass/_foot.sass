@@ -6,11 +6,20 @@
 
 footer
   +flex
-  margin-top: 100px
-  margin-bottom: 100px
+  margin-top: 50px
+  margin-bottom: 5 0px
+
+  +tablet
+    margin-top: 100px
+    margin-bottom: 100px
 
   .social-links, .directory, .footer-signup
-    flex: 0 0 33%
+    flex: 0 0 100%
+    margin-bottom: 25px
+
+    +tablet
+      flex: 0 0 33%
+      margin-bottom: 0
   
 .social-links-box
   +flex
@@ -18,8 +27,11 @@ footer
   margin: 0 auto
   
   .icon
-    flex: 1 0 50%
+    flex: 0 0 33.33%
     height: 30px
+
+    +tablet
+      flex: 1 0 50%
 
     svg
       display: block
@@ -45,8 +57,11 @@ footer
     text-align: center
   
   .tagline
-    width: 310px
+    width: 200px
     margin: 30px auto
+
+    +tablet
+      width: 310px
 
 
 .footer-signup-box

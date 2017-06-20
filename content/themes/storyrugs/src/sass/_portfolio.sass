@@ -5,12 +5,22 @@
 /* INCEPTION RULE: DO NOT nest more than 4  */
 
 .portfolio
-  width: 80%
-  margin: 150px auto  
+  width: 100%
+  margin: 50px auto 150px
   height: 50vw
+
+  +tablet
+    width: 80%
+
+  +tablet
+    margin: 150px auto  
   
   .gallery
-    padding-top: 50px
+    padding-top: 25px
+
+    +tablet
+      padding-top: 50px
+
     ul
       position: relative
 
@@ -29,7 +39,10 @@
   h3
     +gothbold
     color: $darkgrey
-    font-size: 1.5rem
+    font-size: 1rem
     letter-spacing: 0.25rem
     text-align: center
     text-transform: uppercase
+
+    +tablet
+      font-size: 1.5rem

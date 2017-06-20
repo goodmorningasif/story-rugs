@@ -31,22 +31,41 @@
 
 .woocommerce-MyAccount-content
   position: relative
-  width: 500px
-  margin: 50px auto 200px
+  width: 100%
+  margin: 50px auto 100px
+
+  +tablet
+    width: 500px
+    margin: 50px auto 200px
+
+  .woocommerce-message,
+  .woocommerce-Message
+    padding: 30px
 
   .u-columns
     +flex
     margin-top: 30px
+    margin-left: 50px
+    margin-right: 50px
+
+    +tablet
+      margin-left: 0
+      margin-right: 0
 
   .u-column1, .u-column2
-    flex: 0 0 48%
+    flex: 0 0 100%
+
+    +tablet
+      flex: 0 0 48%
 
 .woocommerce-Address-title
   .edit
     display: block
     margin: 15px auto 7px
 
-.woocommerce-EditAccountForm, .woocommerce-form-login, .u-column2 .register
+.woocommerce-EditAccountForm, 
+.woocommerce-form-login, 
+.u-column2 .register
   label
     display: block
     margin-bottom: 10px
