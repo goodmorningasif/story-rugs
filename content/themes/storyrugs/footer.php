@@ -18,6 +18,13 @@
 </body><!-- end -->
 </html>
 
+<!-- ==== SECTION: BACK TO TOP ==== -->
+<section class="back-to-top">
+  <p id="btt">
+    <span>^</span>Top
+  </p>
+</section>
+
 <!-- ==== SECTION: FOOTER ==== -->
 <footer>
   <?php get_template_part('/components/footer/foot'); ?>

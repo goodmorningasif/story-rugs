@@ -7,7 +7,7 @@
 .portfolio
   width: 100%
   margin: 50px auto 150px
-  height: 50vw
+  height: 100%
 
   +tablet
     width: 80%
@@ -16,20 +16,66 @@
     margin: 150px auto  
   
   .gallery
-    padding-top: 25px
+    margin-top: 25px
+
+    height: 100%
+    width: 100%
 
     +tablet
-      padding-top: 50px
+      margin-top: 50px
 
     ul
       position: relative
+      height: 400px
+
+      +tablet
+        height: 650px
 
     li
       position: absolute
       top: 0
       left: 0
-      opacity: 1
       width: 100%
+      height: 380px
+
+      +tablet
+        height: 635px
+
+.gallery-nav
+  +flex($b: center)
+  width: 100%
+  height: 30px
+  margin: 10px auto
+  padding: 10px
+
+  .circle
+    position: relative
+    flex: 0 0 10px 
+    height: 10px
+    margin-left: 5px
+    margin-right: 5px
+
+    &:before
+      content: " "
+      position: absolute
+      top: 0
+      left: 0
+      width: 10px
+      height: 10px
+      z-index: 15
+
+    &:after
+      content: " "
+      position: absolute
+      top: 0
+      left: 0
+      width: 10px
+      height: 10px
+      z-index: 10
+
+
+
+
 
 /* OBJECTS -> For styling objects */
 /* Includes cosmetic styles like color, typography, and borders */
@@ -46,3 +92,26 @@
 
     +tablet
       font-size: 1.5rem
+
+.circle
+  &:before
+    opacity: 0
+    +img($c: 100%)
+    background-image: url('../assets/empty-circle.svg')
+    background-color: $white
+    transition: 0.4s opacity ease
+
+.circle
+  &:after
+    opacity: 1
+    +img($c: 100%)
+    background-image: url('../assets/filled-circle.svg')
+    background-color: $white
+
+.circle-active
+  &:before
+    opacity: 1
+
+.gallery
+ li
+   +img

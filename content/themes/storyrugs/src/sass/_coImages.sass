@@ -16,8 +16,13 @@
       z-index: 1
 
   .wrapper:first-of-type
-    height: 800px
-    padding: 0 75px 140px 75px
+    height: 100%
+    padding: 75px
+    overflow: hidden
+
+    +tablet 
+      height: 800px
+      padding: 0 75px 140px 75px
 
     .co-image
       height: 800px
