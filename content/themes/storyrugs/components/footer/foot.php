@@ -66,7 +66,7 @@
 	  <h3>Stay In Touch!</h3>
 	  <form>
 	  	<input class="foot-form" type="email">
-	  	<input class="foot-form-signup border-box" type="submit"> 
+	  	<input class="foot-form-signup border-box" type="submit" value="join"> 
 	  </form>
   </div>
 </div>

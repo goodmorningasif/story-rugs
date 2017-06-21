@@ -10,10 +10,20 @@
     +flex
 
     .co-images
-      flex: 0 0 60%
+      flex: 0 0 100%
+      order: 2
+
+      +tablet
+        flex: 0 0 60%
+        order: 1
 
     .co-content
-      flex: 0 0 40%
+      flex: 0 0 100%
+      order: 1
+
+      +tablet
+        flex: 0 0 40%
+        order: 2
 
 
 

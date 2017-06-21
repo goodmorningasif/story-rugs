@@ -47,8 +47,8 @@ nav
     width: 80%
     max-width: 1200px
 
-
   a
+    position: relative
     padding-bottom: 4px
     margin-bottom: 8px
     width: 100%
@@ -57,6 +57,13 @@ nav
       margin-bottom: 0
       width: initial
 
+    &:after
+      position: absolute
+      top: 16px
+      left: 0
+      content: " "
+      width: 100%
+      height: 4px
 
 
 /* OBJECTS -> For styling objects */
@@ -87,16 +94,20 @@ nav
   font-size: 0.6rem
   text-transform: uppercase
   letter-spacing: 0.2rem
-  border-bottom-style: solid
   text-align: center
-  border-width: 6px
-  border-color: $white
-  border-image: url('../assets/border-button-white.svg') 25% stretch
-  transition: 0.4s border
-
-  &:hover
-    border-image: url('../assets/border-button-rust.svg') 25% stretch
 
   +tablet
     font-size: 0.75rem
+
+  &:after
+    opacity: 0
+    border-bottom-style: solid
+    border-width: 6px
+    border-color: $white
+    border-image: url('../assets/border-button-rust.svg') 25% stretch
+    transition: 0.4s opacity
+
+  &:hover
+    &:after
+      opacity: 1
 

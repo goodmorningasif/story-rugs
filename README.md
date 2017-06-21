@@ -121,10 +121,10 @@ Follow these steps to edit a current project. This will set up the repository an
 
 ### Deploying to Server
 1. In Liquid Web ...
-  * [ ]  Create account for new site
+  * [x]  Create account for new site
 2. Connect to Server
-  * [ ]  Upload folder `/wordpress/` to `/public_html/`
-  * [ ]  Upload folder `/content/` to `/public_html/`
+  * [x]  Upload folder `/wordpress/` to `/public_html/`
+  * [x]  Upload folder `/content/` to `/public_html/`
   * [ ]  Upload file `wp-config.php` to `/public_html/`
   * [ ]  Upload file `local-config.php` to `/public_html/`
   * [ ]  Upload file `index.php` to `/public_html/`
@@ -164,7 +164,7 @@ For All other files ...
 
 ## Team 
   
-  * PROJECT MANAGER   :   
-  * UX/UI DESIGNER    :   
-  * DEVELOPER         :   
+  * PROJECT MANAGER   :   Paige
+  * UX/UI DESIGNER    :   Courtney 
+  * DEVELOPER         :   Asifuzzaman Ahmed
 
