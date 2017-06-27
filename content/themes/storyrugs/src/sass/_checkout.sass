@@ -5,65 +5,63 @@
 /* INCEPTION RULE: DO NOT nest more than 4  */
 
 
+.woocommerce-cart-form
+  padding-top: 30px
+  padding-bottom: 30px
+
+.woocommerce-info
+  margin-bottom: 40px
+
+
+.woocommerce-checkout
+  input
+    padding-left: 6px
+
+
 .checkout_coupon
-  max-width: 140px
+  +flex($b: flex-start)
+  width: 100%
   margin: 20px auto
 
-  .input-text
+  #coupon_code
+    flex: 0 0 20%
+    height: 35px
     padding: 5px
+    margin-right: 20px
 
   .form-row
-    margin-bottom: 20px
+    margin-bottom: 30px
 
 
 .checkout.woocommerce-checkout
   position: relative
-  width: 100%
-  margin: 30px auto
 
   +tablet
-    width: 500px
-    margin: 20px auto 200px
 
   h3
     margin: 10px auto 20px
 
   label
-    display: block
-    margin-bottom: 5px
-    
-    +tablet
-      margin-bottom: 20px
 
 
   input
-    width: 70%
-    height: 40px
-    margin-bottom: 30px
-    padding-left: 20px
-
-  .select2-container
-    width: 70% !important
-    margin: 0 auto
-
-  #billing_address_1_field, 
-  #billing_postcode_field
-    margin-top: 40px
+    height: 35px
 
 
 #order_comments
-  width: 70%
+  display: block
+  width: 100%
 
 
 .shop_table.woocommerce-checkout-review-order-table
-  margin: 30px auto
+  // margin: 30px auto
 
   th, .product-name
-    width: 100px
+    width: 70%
     height: 20px
 
   td
-    width: 100px
+    width: 30%
     height: 20px
 
 
@@ -71,32 +69,196 @@
   input
     width: 70%
     display: block
-    margin: 5px auto
 
+.woocommerce-billing-fields__field-wrapper,
+.woocommerce-shipping-fields__field-wrapper
+  +flex
+  width: 100%
+
+  p
+    margin-bottom: 20px
+
+
+#billing_first_name_field,
+#billing_last_name_field,
+#billing_phone_field,
+#billing_email_field,
+#billing_city_field,
+#shipping_first_name_field,
+#shipping_last_name_field,
+#shipping_city_field
+  flex: 0 0 100%
+
+  +tablet
+    flex: 0 0 50%
+
+#billing_company_field,
+#billing_country_field,
+#billing_address_1_field,
+#billing_address_2_field,
+#shipping_company_field,
+#shipping_address_1_field,
+#shipping_address_2_field
+  flex: 0 0 100%
+
+#billing_state_field,
+#billing_postcode_field,
+#shipping_state_field,
+#shipping_postcode_field
+  flex: 0 0 100%
+
+  +tablet
+    flex: 0 0 25%
+
+.select2-container--default,
+  display: block
+  height: 35px
+
+#billing_country_field
+  label
     +tablet
-      margin: 30px auto
+      padding-right: 20px
+
+#billing_first_name_field,
+#billing_state_field,
+#billing_phone_field,
+#billing_city_field,
+#shipping_first_name_field,
+#shipping_city_field,
+#shipping_state_field
+  +tablet
+    padding-right: 20px
+
+#billing_last_name_field,
+#billing_postcode_field,
+#billing_email_field,
+#billing_state_field,
+#shipping_last_name_field,
+#shipping_state_field,
+#shipping_postcode_field
+  +tablet
+    padding-left: 20px
+
+#account_password_field
+  margin-top: 20px
+
+#billing_first_name,
+#billing_last_name,
+#billing_company,
+#billing_city,
+#billing_state,
+#billing_postcode,
+#billing_phone,
+#billing_email,
+#shipping_first_name,
+#shipping_last_name,
+#shipping_company,
+#shipping_country_field,
+#shipping_city,
+#shipping_state,
+#shipping_postcode
+  width: 100%
+
+#billing_address_1,
+#billing_address_2,
+#account_password,
+#shipping_address_1,
+#shipping_address_2
+  width: 100%
+
+  +tablet
+    width: 47%
 
 
 #order_review_heading, 
 .woocommerce-additional-fields
   margin-top: 50px
 
+#order_review
+  +tablet
+    widht: 400px
+    margin-left: auto
+
 #place_order
   padding: 0
   margin-top: 50px
+  margin-left: auto
+  width: 200px
 
+.woocommerce-shipping-fields
+  width: 100%
+  margin: 0
+  padding: 0
+
+.checkbox
+  +flex($b: flex-start)
+  height: 20px
+
+  #createaccount,
+  #ship-to-different-address-checkbox
+    display: block
+    flex: 0 0 20px
+    height: 20px
+    margin-top: 7px
+
+  span
+    display: block
+    flex: 0 0 auto
+    height: 20px
+
+
+.shop_table,
+.woocommerce-checkout-review-order-table
+
+  tbody
+    .cart_item
+      height: 60px
+
+    .product-name,
+    .product-total
+      padding-top: 20px
+      padding-bottom: 20px
+
+  tfoot
+    th,
+    tr
+      padding-top: 20px
+      padding-bottom: 20px
+
+  .shipping
+    td
+      padding-top: 20px
+      padding-bottom: 20px      
+
+.woocommerce-checkout-payment
+  ul li
+    padding-top: 10px
+    padding-bottom: 10px
 
 /* OBJECTS -> For styling objects */
 /* Includes cosmetic styles like color, typography, and borders */
 /* INCEPTION RULE: DO NOT nest more than 4  */
 
+.woocommerce-cart-form
+  border-bottom-style: solid
+  border-bottom-width: 6px
+  border-top-style: solid
+  border-top-width: 6px
+  border-image: url('../assets/border-button.svg') 25% stretch
+  border-image-outset: 1px
+
 .woocommerce-info
-  +millerbanner
+  +gothbold
   color: $darkgrey
-  font-size: 1.1rem
-  letter-spacing: 0.005rem
+  font-size: 0.75rem
+  letter-spacing: 0.1rem
   line-height: 1.9rem
-  text-align: center
+  text-align: left
+  text-transform: uppercase
+  border-bottom-style: solid
+  border-bottom-width: 6px
+  border-image: url('../assets/border-button.svg') 25% stretch
+  border-image-outset: 1px
 
   a
     color: $rust
@@ -137,20 +299,30 @@
 
 .checkout.woocommerce-checkout
   h3
-    +gothmed
+    +gothbold
+    color: $darkgrey
     font-size: 0.75rem
     letter-spacing: 0.1rem
-    text-align: center
+    line-height: 1.9rem
+    text-align: left
     text-transform: uppercase
+    border-bottom-style: solid
+    border-bottom-width: 6px
+    border-image: url('../assets/border-button.svg') 25% stretch
+    border-image-outset: 1px
 
   p
-    +millerbanner
+    +gothbook
     color: $darkgrey
-    font-size: 1.1rem
-    letter-spacing: 0.005rem
-    line-height: 1.9rem
-    text-align: center
+    font-size: 0.6rem
+    letter-spacing: 0.05rem
+    line-height: 1rem
+    text-align: left
+    text-transform: uppercase
     transition: 0.4s color
+
+  .required
+    color: $rust
 
   input
     +gothmed
@@ -167,12 +339,16 @@
     transition: 0.4s background-color  
 
   .select2-container
-    border: 2px solid $darkgrey
+    border-style: solid
+    border-width: 6px
+    border-image: url('../assets/border-button.svg') 25% stretch
+    border-image-outset: 1px
 
 
 .select2-container--default .select2-selection--single
   border: none
   border-width: 0
+  background-color: transparent
 
 
 .select2-container--default .select2-selection--single .select2-selection__arrow b
@@ -194,7 +370,6 @@
   transition: 0.4s background-color  
 
 
-.shop_table,
 .woocommerce-checkout-review-order-table
   th
     +gothmed
@@ -202,22 +377,41 @@
     font-size: 0.55rem
     letter-spacing: 0.1rem
     text-transform: uppercase
-    text-align: right
-    border-right: 20px solid $white
+
+  thead
+    text-align: left
+    
+    .product-name,
+    .product-total
+      color: grey
+
+  tbody
+    border-bottom: 1px solid grey
+    .cart_item
+
+    .product-name,
+    .product-total
+      
+
+  tfoot
+    tr
+      text-align: left
+      border-bottom: 1px solid grey
+
+    td
+      p 
+        line-height: 0.2rem
+
 
   td
-    +millerbanner
-    color: $rust
-    font-size: 1rem
-    letter-spacing: 0.005rem
-    line-height: 1.2rem
-    text-align: left
-    text-transform: lowercase
+    +gothmed
+    color: $darkgrey
+    font-size: 0.7rem
+    letter-spacing: 0.08rem
+    text-transform: uppercase
 
   .product-name
     color: $black
-    text-align: right
-    border-right: 20px solid $white
 
   .product-quantity
     +gothmed
@@ -225,7 +419,6 @@
     font-size: 0.55rem
     letter-spacing: 0.1rem
     text-transform: uppercase
-    text-align: right
 
 
 .checkout.woocommerce-checkout 
@@ -242,3 +435,35 @@
     &:hover
       background-color: $white
       color: $darkgrey
+
+.woocommerce-checkout
+  input
+
+    +placeholder
+      +gothbook
+      color: grey
+      font-size: 0.6rem
+      letter-spacing: 0.05rem
+      line-height: 1.9rem
+      text-align: left
+      text-transform: uppercase
+
+
+#ship-to-different-address
+  +gothbook
+  color: $darkgrey
+  font-size: 0.6rem
+  letter-spacing: 0.05rem
+  line-height: 1.9rem
+  text-align: left
+  text-transform: uppercase
+  border: none
+
+.woocommerce-checkout-payment
+  ul li
+    +gothmed
+    color: $darkgrey
+    font-size: 0.7rem
+    letter-spacing: 0.08rem
+    line-height: 1.4rem
+    text-transform: uppercase

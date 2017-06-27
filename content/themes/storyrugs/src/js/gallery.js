@@ -55,4 +55,13 @@ function handleGalleryClick (thisEl) {
     $j('.circle').removeClass('circle-active');
     $j('.circle-'+currentId).addClass('circle-active');
 
+    setTimeout(function(){
+      reset = false;
+    }, 5000);
+
+    setTimeout(function(){
+      imageLoop(5000, currentId);
+    }, 7000);
+
 }
+

@@ -4,6 +4,9 @@
 /* includes positioning styles like display, padding, margin, height */
 /* INCEPTION RULE: DO NOT nest more than 4  */
 
+.woocommerce-message
+  position: relative
+  z-index: 100
 
 .woocommerce-MyAccount-navigation
   width: 100%
@@ -40,7 +43,9 @@
 
   .woocommerce-message,
   .woocommerce-Message
+    position: relative
     padding: 30px
+    z-index: 100
 
   .u-columns
     +flex
@@ -118,6 +123,10 @@
   display: block
   margin-top: 15px
   margin-bottom: 40px
+
+.return-to-shop
+  width: 180px
+  margin: 10px auto
 
 
 /* OBJECTS -> For styling objects */
@@ -288,6 +297,41 @@
   line-height: 1.2rem
   text-align: center
 
+.cart-empty
+  +millerbanner
+  color: $darkgrey
+  font-size: 1.1rem
+  letter-spacing: 0.005rem
+  line-height: 1.9rem
+  text-align: center
+  transition: 0.4s color
 
+.return-to-shop
+  +gothmed
+  color: $darkgrey
+  font-size: 0.6rem
+  letter-spacing: 0.1rem
+  line-height: 1rem
+  text-transform: uppercase
+  text-align: center
+  border-style: solid
+  border-width: 6px
+  border-image: url('../assets/border-button.svg') 25% stretch
+  border-image-outset: 1px
+  transition: 0.4s background-color
 
+  a 
+    color: $darkgrey
 
+  &:hover
+    background-color: $darkgrey
+
+    a
+      color: $white
+
+.woocommerce-message a
+  color: $rust
+  transition: 0.4s all
+
+  &:hover
+    color: $darkgrey

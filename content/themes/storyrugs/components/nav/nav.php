@@ -14,7 +14,9 @@
     </a>
   </div>
 	<div class="cart">
-		<span class="total border-box">0</span>
+		<span class="total border-box">
+      <?php  echo WC()->cart->get_cart_contents_count(); ?>  
+    </span>
     <a href="http://<?php echo $GLOBALS['root']; ?>/cart">
   		Cart
     </a>

@@ -54,9 +54,7 @@ function matchPosition(callback){
   		callback;
   		i++;
   	}
-
   }
-
 }
 
 

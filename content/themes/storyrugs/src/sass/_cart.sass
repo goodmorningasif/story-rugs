@@ -4,19 +4,28 @@
 /* includes positioning styles like display, padding, margin, height */
 /* INCEPTION RULE: DO NOT nest more than 4  */
 
-
-.woocommerce-cart-form
-  width: 100%
-  margin: 0 auto 10px
-
-  +tablet
-    max-width: 800px
-
-  table
+body
+  > .woocommerce
+    width: 80%
     margin: 0 auto
 
+    +tablet
+      max-width: 1000px
+
+
+.woocommerce-cart-form__contents
+  width: 100%
+  +tiny
+    height: 100%
+  
   tr
-    height: 15px
+    +tiny
+      display: block
+    // height: 15px
+
+  .shop_table
+    +tiny
+      display: block
 
   thead
     .product-remove,
@@ -25,9 +34,20 @@
     .product-price,
     .product-subtotal,
     .product-quantity
-      display: none
+      padding-left: 10px
+      padding-right: 10px
+
+      +tiny
+        display: none
+        width: 0
+
+    .product-name
+      padding-left: 40px
 
   tbody
+    +tiny
+      display: block
+      height: 100%
 
     .product-remove,
     .product-thumbnail,
@@ -35,11 +55,15 @@
     .product-price,
     .product-subtotal,
     .product-quantity
-      padding: 5px
       border: none
+      padding: 10px
 
-      +tablet
-        padding: 20px
+    .product-name
+      padding-left: 40px
+
+    .product-thumbnail
+      width: 120px
+      padding: 20px 10px
 
     .product-quantity
       input
@@ -52,60 +76,93 @@
       +tablet
         display: block
 
-.product-thumbnail,
-  display: none
 
-  +tablet
+.actions
+  display: table-cell
+  width: 100%
+  padding-bottom: 40px
+  padding-top: 40px
+
+  +tiny
     display: block
+    height: 100% !important
 
 
-.coupon
-  margin: 2px auto
-  width: 200px
+  .coupon
+    width: 200px
 
-  +tablet
-    width: 400px
-
-  .input-text
-    padding: 5px
+    +tiny
+      width: 100%
 
     +tablet
-      margin-left: 15px
-      margin-right: 15px
+      width: 300px
+      float: left
+
+    label
+      display: none
+
+    .input-text
+      padding: 5px
+      height: 35px
+
+      +tiny
+        display: block
+        width: 100%
+  
+  .button
+    float: right
+
+    +tiny
+      display: block !important
+      width: 100%
+      text-align: center !important
+
 
 
 .actions
 
-  +tablet
-    padding-top: 60px
-
-  > input:first-of-type
-    margin: 20px auto
-    width: 150px
-    display: block
-
-
 .cart-collaterals
   margin-top: 55px
 
-  .shop_table,
+  .shop-table,
   .shop_table_responsive
-    margin: 30px auto
+    width: 100%
+
+    +tablet
+      width: 450px
+      margin-left: auto
 
     th
-      +tablet
-        width: 85px
-        height: 20px
+      padding-bottom: 10px
+      padding-right: 10px
 
     td
+      padding-top: 10px
+      padding-bottom: 10px
+
       +tablet
-        width: 100px
-        height: 20px
+        max-width: 80px
+
+    td a
+      display: block
+      padding-top: 10px
+
+    tr
+      border-bottom: 1px solid grey
 
   .wc-proceed-to-checkout
+    width: 100%
   
     +tablet
+      width: 220px
       margin-bottom: 150px
+      margin-left: auto
+      margin-top: 20px
+
+    a
+      display: block
+      width: 185px
+      margin: 0 auto
 
 
 .woocommerce-message,
@@ -122,6 +179,84 @@
       display: inline-block
       margin: 0
 
+tbody
+  .woocommerce-cart-form__cart-item
+    .product-remove
+      width: 20px
+      vertical-align: middle
+
+    .product-name,
+    .product-price,
+    .product-quantity,
+    .product-subtotal
+      height: 100%
+      display: table-cell
+      vertical-align: middle
+
+.woocommerce-cart-form
+  +tiny
+    display: block
+    height: 100% !important
+
+.cart
+  +tiny
+    display: block
+
+  tbody
+    +tiny
+      height: 100% !important
+
+    tr
+      +tiny
+        height: 100% !important
+
+  .cart_item
+    +tiny
+      display: block
+
+    .product-remove,
+    .product-thumbnail,
+    .product-name,
+    .product-price,
+    .product-subtotal
+      +tiny
+        display: block
+        width: 100%
+
+    .product-thumbnail
+      +tiny
+        height: 100%
+
+      img
+        +tiny
+          height: 100%
+
+    .product-name,
+    .product-subtotal
+      +tiny
+        height: 60px
+        padding-top: 30px
+        // border-bottom: 1px solid grey 
+
+    .product-quantity
+      +tiny
+        width: 100%
+        display: block
+        padding: 0
+
+      .quantity
+        +tiny
+          display: block
+          width: 100% 
+
+        input
+          +tiny
+            display: block
+            margin-top: 20px
+            width: 100%
+            height: 35px
+
+
 
 /* OBJECTS -> For styling objects */
 /* Includes cosmetic styles like color, typography, and borders */
@@ -133,23 +268,13 @@
       th
         +gothmed
         color: $darkgrey
-        font-size: 0.4rem
+        font-size: 0.7rem
         letter-spacing: 0.1rem
         text-transform: uppercase
-        border-right: 1px solid $darkgrey
-        text-align: center
-
-        +tablet
-          font-size: 0.55rem
-
-      th:first-child,
-      th:nth-child(2),
-      th:last-of-type
-        border: none
+        text-align: left
 
   tbody
     tr 
-      border-bottom: 10px solid $white
 
     .product-remove, 
     .product-remove a
@@ -162,36 +287,33 @@
 
     .product-thumbnail
       background-color: $litegrey
+      border-bottom: 10px solid $white
 
     .product-name,
     .product-name a
-      +millerbanner
-      color: $black
-      font-size: 1.1rem
-      letter-spacing: 0.005rem
-      line-height: 1.2rem
-      text-align: center
-      text-transform: lowercase
-      transition: 0.4s color
+      +gothmed
+      color: $darkgrey
+      font-size: 0.75rem
+      letter-spacing: 0.1rem
+      text-align: left
+      text-transform: uppercase
+
 
       &:hover
         color: $rust
 
-      +tablet
-        font-size: 1.6rem
-
     .product-price, 
     .product-subtotal
-      +millerbanner
-      color: $rust
-      font-size: 1rem
-      letter-spacing: 0.005rem
-      line-height: 1.2rem
-      text-align: center
-      text-transform: lowercase
+      +gothmed
+      color: $darkgrey
+      font-size: 0.75rem
+      letter-spacing: 0.1rem
+      text-align: left
+      text-transform: uppercase
+
 
       +tablet
-        font-size: 1rem
+        // font-size: 1rem
 
     .product-quantity
       input
@@ -212,7 +334,6 @@
       letter-spacing: 0.005rem
       line-height: 1.2rem
       text-align: center
-      border-top: 10px solid $white
 
 
 .coupon
@@ -275,54 +396,63 @@
 
 .cart-collaterals
   h2
-    +millerbanner
-    color: $darkgrey
-    font-size: 1.3rem
-    letter-spacing: 0.005rem
-    line-height: 1.2rem
-    text-align: center
-    text-align: center
+    display: none
 
 
-.woocommerce-cart-form
-  .shop_table, 
+.calculated_shipping
+  .shop_table,
   .shop_table_responsive
-    th
+    th,
+    td
       +gothmed
       color: $darkgrey
-      font-size: 0.55rem
-      letter-spacing: 0.1rem
+      font-size: 0.7rem
+      letter-spacing: 0.05rem
+      line-height: 1rem
       text-transform: uppercase
-      text-align: right
-      border-right: 20px solid $white
+
+    td a
+      color: $rust
+      transition: 0.4s color
+
+      &:hover 
+        color: $darkgrey
+
+    th
+      text-align: left
 
     td
-      +millerbanner
-      color: $rust
-      font-size: 0.7rem
-      letter-spacing: 0.005rem
-      line-height: 1.2rem
-      text-align: left
-      text-transform: lowercase
+      text-align: right
 
-      +tablet
-        font-size: 1rem
 
 
 .cart-collaterals
   .wc-proceed-to-checkout
     +gothmed
-    font-size: 0.55rem
+    background-color: $darkgrey
+    font-size: 0.6rem
     letter-spacing: 0.1rem
+    line-height: 1rem
     text-transform: uppercase
-    text-align: center
+    text-align: left
+    border-style: solid
+    border-width: 6px
+    border-image: url('../assets/border-button.svg') 25% stretch
+    border-image-outset: 1px
+    transition: 0.4s background-color, 0.4s color   
 
     a
-      color: $darkgrey
+      color: $white
       transition: 0.4s color
 
-      &:hover
-        color: $rust
+    &:hover
+      background-color: $white
+
+      a
+        color: $darkgrey
+
+.cart-empty
+  
 
 
 .woocommerce-message,
