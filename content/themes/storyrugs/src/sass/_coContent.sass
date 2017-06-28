@@ -4,20 +4,27 @@
 /* includes positioning styles like display, padding, margin, height */
 /* INCEPTION RULE: DO NOT nest more than 4  */
 
-
+body.single-product
+  .woocommerce-message
+    margin-top: -40px
+    margin-bottom: 40px
 
 .co-content
   position: relative
-  padding: 75px
   max-width: 500px
   margin: 0 auto
 
+  +tablet
+    padding: 75px
+
   .content-floater
+    width: 100%
+
     +tablet
-      position: fixed
-      top: 370px
-      right: 8%
-      width: 340px
+      // position: fixed
+      // top: 370px
+      // right: 8%
+      // width: 340px
 
   .zero-top
     top: 50px
@@ -94,6 +101,16 @@
 /* OBJECTS -> For styling objects */
 /* Includes cosmetic styles like color, typography, and borders */
 /* INCEPTION RULE: DO NOT nest more than 4  */
+
+body.single-product
+  .woocommerce-message
+    +gothmed
+    color: $darkgrey
+    font-size: 0.55rem
+    text-align: center
+    text-transform: uppercase
+    letter-spacing: 0.15rem
+    line-height: 1rem
 
 .co-content
   .content-floater

@@ -14,7 +14,7 @@
   </div>
 </div>
 
-<form>
+<form class="purchase-form-form">
   <input class="purchase border-box pname" 
     type="name" placeholder="name">
   <input class="purchase border-box psize" 

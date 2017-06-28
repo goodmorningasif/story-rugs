@@ -60,7 +60,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				  <span class="remember-me-wrapper">
 						<input class="woocommerce-form__input woocommerce-form__input-checkbox" name="rememberme" type="checkbox" id="rememberme" value="forever" /> <span><?php _e( 'Remember me', 'woocommerce' ); ?></span>
 					</span>
-				</span>
+				</label>
 			</p>
 <!-- 			<p class="woocommerce-LostPassword lost_password">
 				<a href="<?php  // echo esc_url( wp_lostpassword_url() ); ?>"><?php  //_e( 'Lost your password?', 'woocommerce' ); ?></a>

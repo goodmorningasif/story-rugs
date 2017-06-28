@@ -64,7 +64,7 @@
 <div class="footer-signup">
   <div class="footer-signup-box">
 	  <h3>Stay In Touch!</h3>
-	  <form>
+	  <form class="newsletter-form">
 	  	<input class="foot-form" type="email">
 	  	<input class="foot-form-signup border-box" type="submit" value="join"> 
 	  </form>
