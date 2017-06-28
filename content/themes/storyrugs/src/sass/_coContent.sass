@@ -5,9 +5,17 @@
 /* INCEPTION RULE: DO NOT nest more than 4  */
 
 .co-content
+  position: relative
   padding: 75px
   max-width: 500px
   margin: 0 auto
+
+  .content-floater
+    +tablet
+      position: fixed
+      top: 370px
+      right: 8%
+      width: 340px
 
   .co-head
     position: relative

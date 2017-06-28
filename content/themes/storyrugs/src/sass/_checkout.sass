@@ -4,13 +4,20 @@
 /* includes positioning styles like display, padding, margin, height */
 /* INCEPTION RULE: DO NOT nest more than 4  */
 
+body.woocommerce-checkout
+  > .woocommerce
+    width: 80%
+    margin: 0 auto
+
+    +tablet
+      max-width: 700px
 
 .woocommerce-cart-form
   padding-top: 30px
   padding-bottom: 30px
 
 .woocommerce-info
-  margin-bottom: 40px
+  margin-bottom: 45px
 
 
 .woocommerce-checkout
@@ -76,7 +83,7 @@
   width: 100%
 
   p
-    margin-bottom: 20px
+    margin-bottom: 30px
 
 
 #billing_first_name_field,
@@ -176,7 +183,7 @@
 
 #order_review
   +tablet
-    widht: 400px
+    max-width: 400px
     margin-left: auto
 
 #place_order
@@ -234,6 +241,33 @@
   ul li
     padding-top: 10px
     padding-bottom: 10px
+
+body.woocommerce-checkout
+  .woocommerce-form-login
+    p:first-child
+      max-width: 500px
+      margin: 0 auto 25px
+
+    label
+      display: block
+      margin-bottom: 10px
+
+    input
+      width: 420px
+      margin: 0 auto 30px
+      display: block
+
+    input[type=submit]
+      width: 170px
+
+.woocommerce-form__label-for-checkbox
+  +flex
+  
+  .rememberme
+    display: block
+    width: 20px
+    height: 20px
+
 
 /* OBJECTS -> For styling objects */
 /* Includes cosmetic styles like color, typography, and borders */
@@ -465,5 +499,37 @@
     color: $darkgrey
     font-size: 0.7rem
     letter-spacing: 0.08rem
-    line-height: 1.4rem
+    line-height: 1.2rem
     text-transform: uppercase
+
+span.required
+  color: $rust
+  font-size: 0.75rem
+
+
+body.woocommerce-checkout
+  .woocommerce-form-login
+    p
+      +gothbook
+      color: $darkgrey
+      font-size: 0.6rem
+      letter-spacing: 0.05rem
+      line-height: 1rem
+      text-align: left
+      text-transform: uppercase
+      transition: 0.4s color
+
+    label
+      text-transform: initial
+
+    input[type=submit]
+      color: $white
+      background-color: $darkgrey
+      text-align: center
+      transition: 0.4s color, 0.4s background-color
+
+
+
+      &:hover
+        color: $darkgrey
+        background-color: $white
