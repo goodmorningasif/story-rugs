@@ -17,7 +17,7 @@
 			  $title = get_sub_field('ft_social-link'); ?>
 
 				<div class="icon">
-				  <a href="<?php echo $title ?>">
+				  <a href="<?php echo $title ?>" target="_blank">
 						<?php echo file_get_contents($icon['url']); ?>
 					</a>
 				</div>

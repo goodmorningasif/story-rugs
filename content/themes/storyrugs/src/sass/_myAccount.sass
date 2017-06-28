@@ -180,6 +180,30 @@
 .woocommerce-MyAccount-navigation-link--downloads
   display: none
 
+body.woocommerce-edit-address
+  .woocommerce-address-fields__field-wrapper
+    +flex
+    padding-top: 30px
+
+    label
+      display: block
+
+    input 
+      display: block
+
+    p
+      margin-bottom: 30px
+
+    #shipping_state_field,
+    #shipping_postcode_field
+      flex: 0 0 100%
+      +tablet
+        flex: 0 0 25%
+        overflow: hidden
+
+  input[type=submit].button
+    display: block
+    margin-left: auto
 
 
 
@@ -430,3 +454,64 @@ span.remember-me-wrapper
     letter-spacing: 0.1rem
     text-align: center
     text-transform: uppercase
+
+body.woocommerce-edit-address
+  h3
+    +gothbold
+    color: $darkgrey
+    font-size: 0.75rem
+    letter-spacing: 0.1rem
+    line-height: 1.9rem
+    text-align: left
+    text-transform: uppercase
+    border-bottom-style: solid
+    border-bottom-width: 6px
+    border-image: url('../assets/border-button.svg') 25% stretch
+    border-image-outset: 1px
+
+  label
+    +gothbook
+    color: $darkgrey
+    font-size: 0.6rem
+    letter-spacing: 0.05rem
+    line-height: 1rem
+    text-align: left
+    text-transform: uppercase
+    transition: 0.4s color
+
+  input
+    +gothmed
+    color: $darkgrey
+    font-size: 0.6rem
+    letter-spacing: 0.1rem
+    line-height: 1rem
+    text-transform: uppercase
+    text-align: left
+    border-style: solid
+    border-width: 6px
+    border-image: url('../assets/border-button.svg') 25% stretch
+    border-image-outset: 1px
+    transition: 0.4s background-color 
+
+  .select2.select2-container.select2-container--default 
+    +gothbook
+    color: $darkgrey
+    font-size: 0.6rem
+    letter-spacing: 0.05rem
+    line-height: 1rem
+    text-align: left
+    text-transform: uppercase
+    transition: 0.4s color   
+    border-style: solid
+    border-width: 6px
+    border-image: url('../assets/border-button.svg') 25% stretch
+    border-image-outset: 1px
+
+  input[type=submit].button
+    color: $white
+    background-color: $darkgrey
+    transition: 0.4s color, 0.4s background-color
+
+    &:hover
+      color: $darkgrey
+      background-color: $white

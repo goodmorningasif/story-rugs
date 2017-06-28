@@ -12,7 +12,7 @@
   <h3 class="widont">
     <?php echo get_sub_field('text_copycta-copy'); ?>
   </h3>
-  <a class="border-box" href="<?php echo get_sub_field('text_copycta-cta'); ?>">
+  <a class="border-box" href="mailto:info@storyrugs.com">
     <?php echo get_sub_field('text_copycta-cta'); ?>
   </a>
   <?php if(get_sub_field('text_copycta-2nd-head')) : ?>
