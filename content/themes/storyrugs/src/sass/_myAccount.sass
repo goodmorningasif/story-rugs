@@ -76,7 +76,7 @@
     margin-bottom: 10px
 
   input
-    width: 70%
+    width: 100%
     height: 40px
     margin-bottom: 30px
     padding-left: 20px
@@ -93,17 +93,26 @@
 
 .woocommerce
   #customer_login
-    max-width: 600px
+    max-width: 520px
     margin: 0 auto 10px
 
     h2
+      position: relative
       margin-top: 30px
-      margin-bottom: 15px
+      margin-bottom: 20px
+      padding-bottom: 1px
+
+    .login-copy
+      margin-bottom: 30px  
 
     input
       display: block
       margin-left: auto
       margin-right: auto
+
+    input[type=submit]
+      margin-right: 0
+
 
     .woocommerce-form__input-checkbox
       display: inline-block
@@ -118,15 +127,47 @@
   .u-column1, .u-column2
     margin-bottom: 50px
 
+#account-sign-in
+  +flex($b: flex-end, $c: right)
 
-.woocommerce-password-hint
+  input[type=submit]
+    flex: 0 0 100px
+    margin-left: 0
+    margin-right: 0
+
+  .forgot_password_d
+    flex: 0 0 160px
+    display: block
+    height: 40px
+    padding: 5px
+    margin-right: 20px
+
+  .woocommerce-form__label-for-checkbox
+    flex: 0 0 100%
+
+    .remember-me-wrapper
+      width: 150px
+      display: block
+      margin: 10px auto 0
+
+.woocommerce-password-hint,
+.woocommerce-password-strength,
   display: block
   margin-top: 15px
   margin-bottom: 40px
 
+.woocommerce-password-strength.bad,
+.woocommerce-password-strength.short
+  margin-bottom: 0
+
 .return-to-shop
   width: 180px
   margin: 10px auto
+
+.woocommerce-MyAccount-navigation-link--downloads
+  display: none
+
+
 
 
 /* OBJECTS -> For styling objects */
@@ -164,56 +205,57 @@
       a
         color: $white
 
-
-.woocommerce-MyAccount-content
-  p, 
-  .woocommerce-message, 
-  .woocommerce-Message
-    +millerbanner
-    color: $darkgrey
-    font-size: 1.1rem
-    letter-spacing: 0.005rem
-    line-height: 1.9rem
-    text-align: center
-
-    strong, a
-      color: $rust
-      transition: 0.4s color
-
-      &:hover
-        color: $darkgrey
-
-  .u-columns
-    h3, 
-    a
-      +gothmed
-      font-size: 0.75rem
-      letter-spacing: 0.1rem
-      text-align: center
-      text-transform: uppercase
-
-    a
-      color: $rust
-      font-size: 0.6rem
-      transition: 0.4s color
-
-      &:hover
-        color: $darkgrey
-    
-    address
+body.logged-in
+  .woocommerce-MyAccount-content
+    p, 
+    .woocommerce-message, 
+    .woocommerce-Message
       +millerbanner
       color: $darkgrey
-      font-size: 0.8rem
+      font-size: 1.1rem
       letter-spacing: 0.005rem
-      line-height: 1.2rem
+      line-height: 1.9rem
       text-align: center
+      text-transform: initial
+      border: none
+
+      strong, a
+        color: $rust
+        transition: 0.4s color
+
+        &:hover
+          color: $darkgrey
+
+    .u-columns
+      h3, 
+      a
+        +gothmed
+        font-size: 0.75rem
+        letter-spacing: 0.1rem
+        text-align: center
+        text-transform: uppercase
+
+      a
+        color: $rust
+        font-size: 0.6rem
+        transition: 0.4s color
+
+        &:hover
+          color: $darkgrey
+      
+      address
+        +millerbanner
+        color: $darkgrey
+        font-size: 0.8rem
+        letter-spacing: 0.005rem
+        line-height: 1.2rem
+        text-align: center
 
 
 .woocommerce-EditAccountForm, 
 .woocommerce-form-login, 
 .u-column2 .register
 
-  label, 
   .woocommerce-LostPassword
     +millerbanner
     color: $darkgrey
@@ -229,6 +271,13 @@
       &:hover
         color: $darkgrey
 
+  label
+    +gothbook
+    font-size: 0.6rem
+    letter-spacing: 0.015rem
+    line-height: 1rem
+    text-transform: uppercase
+    text-align: left
   input
     +gothmed
     color: $darkgrey
@@ -266,11 +315,22 @@
 .woocommerce
   #customer_login
     h2
-      +gothmed 
-      font-size: 0.75rem
-      letter-spacing: 0.1rem
+      +millerbanner
+      color: $black
+      font-size: 1.6rem
+      line-height: 1.2em
       text-align: center
-      text-transform: uppercase
+
+      +tablet
+        font-size: 2.8rem
+
+    p
+      +millerbanner
+      color: $darkgrey
+      font-size: 1.1rem
+      letter-spacing: 0.005rem
+      line-height: 1.9rem
+      text-align: center
 
     .woocommerce-form__input-checkbox
       -webkit-appearance: none;
@@ -335,3 +395,27 @@
 
   &:hover
     color: $darkgrey
+
+.forgot_password_d
+  +gothmed
+  color: $darkgrey
+  font-size: 0.6rem
+  letter-spacing: 0.05rem
+  line-height: 1rem
+  text-transform: uppercase
+  text-align: center
+  border-style: solid
+  border-width: 6px
+  border-image: url('../assets/border-button.svg') 25% stretch
+  border-image-outset: 1px
+  transition: 0.4s background-color
+
+span.remember-me-wrapper
+  span 
+    +millerbanner
+    color: $darkgrey
+    font-size: 1.1rem
+    letter-spacing: 0.001rem
+    line-height: 1.1rem
+    text-align: center
+    text-transform: initial

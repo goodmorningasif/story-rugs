@@ -115,7 +115,7 @@ body.woocommerce-checkout
   flex: 0 0 100%
 
   +tablet
-    flex: 0 0 25%
+    flex: 0 0 20%
 
 .select2-container--default,
   display: block
@@ -201,12 +201,18 @@ body.woocommerce-checkout
   +flex($b: flex-start)
   height: 20px
 
-  #createaccount,
+  
   #ship-to-different-address-checkbox
     display: block
     flex: 0 0 20px
     height: 20px
     margin-top: 7px
+
+  #createaccount
+    display: block
+    flex: 0 0 20px
+    height: 20px
+    margin-top: 1px
 
   span
     display: block
@@ -244,21 +250,24 @@ body.woocommerce-checkout
 
 body.woocommerce-checkout
   .woocommerce-form-login
+    max-width: 500px
+    margin: 0 auto
+
     p:first-child
-      max-width: 500px
-      margin: 0 auto 25px
+      margin-bottom: 30px
 
     label
       display: block
       margin-bottom: 10px
 
     input
-      width: 420px
-      margin: 0 auto 30px
+      width: 100%
+      margin-bottom: 30px
       display: block
 
     input[type=submit]
       width: 170px
+      margin-left: auto
 
     .lost_password
       width: 190px
@@ -277,8 +286,10 @@ body.woocommerce-checkout
       margin-bottom: 0
       margin-right: 10px
       margin-left: 0
-      margin-top: 10px
       padding: 0
+
+table.shop_table.woocommerce-checkout-review-order-table
+  width: 100%
 
 
 
@@ -533,7 +544,7 @@ body.woocommerce-checkout
       transition: 0.4s color
 
     label
-      text-transform: initial
+      text-transform: uppercase
 
     input[type=submit]
       color: $white
@@ -554,8 +565,7 @@ body.woocommerce-checkout
       text-align: center
       text-transform: uppercase
       transition: 0.4s color
-      color: $white
-      background-color: $darkgrey
+      background-color: $white
       border-style: solid
       border-width: 6px
       border-image: url('../assets/border-button.svg') 25% stretch
@@ -563,13 +573,13 @@ body.woocommerce-checkout
       transition: 0.4s background-color  
 
       &:hover
-        background-color: $white
+        background-color: $darkgrey
 
         a
-          color: $darkgrey
+          color: $white
 
     .lost_password a
-      color: $white
+      color: $darkgrey
       transition: 0.4s color
 
 body.woocommerce-checkout

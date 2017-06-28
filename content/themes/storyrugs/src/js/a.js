@@ -57,4 +57,31 @@ $j(document).ready(function(){
     $j('html, body').animate({scrollTop: 0}, 1000);
   });
 
+  // handle form submission TEMP
+  $j('form').on('submit', function(e){
+    e.preventDefault();
+    $j(this).fadeOut(500,function(){
+      $j(this).parent().append('<div class="confirmation"><h3>Thank you for your submission</h3><div>');
+    });
+  })
+  
+  // if single-product, handle sticky product description
+  if ($j('body').hasClass('single-product') ) {
+    var navBottom = $j('nav').height(); 
+    // add scroll event listner
+    $j(window).scroll(function(){
+      windowTop = $j(window).scrollTop();
+
+      if(windowTop > navBottom) {
+        $j('.content-floater').addClass('zero-top');
+        console.log('true');
+      } else {
+        $j('.content-floater').removeClass('zero-top');
+      }
+
+    });
+
+  }
+
+
 });
