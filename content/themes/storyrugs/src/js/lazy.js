@@ -21,7 +21,7 @@ function getLazyElements(){
 	var store = [];
   var row;
   // 
-  var adjustment = windowHeight/5;
+  var adjustment = windowHeight - windowHeight/3;
 
   // loop through lazy elements
 	$j('.lazy').each(function(index, value){
@@ -51,7 +51,7 @@ function getLazyElements(){
 function matchPosition(callback){
 	if(store[i]){
 		if (windowTop > store[i].top) {
-  		callback;
+  		callback();
   		i++;
   	}
   }
@@ -60,13 +60,12 @@ function matchPosition(callback){
 
 /* 
 * 
-* injectClass
+* addMyClass
 *
 * injects class into current element
 *
 */
 
-function injectClass(elClass){
-	$j('#lazyEl-' + i).addClass(elClass);
-
+function addMyClass(currentEl, addClass){
+	$j(currentEl).addClass(addClass);
 }

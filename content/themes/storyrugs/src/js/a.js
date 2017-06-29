@@ -25,24 +25,33 @@ $j(document).ready(function(){
 
   // if store, invoke lazy elements
   if (store.length) {
-    console.log('lazy loading invoked')
-    // initial invocation of lazy.js
-    matchPosition(injectClass('load'));
+
+    // if window is below browser height, invoke lazy.js on all elements
+    if (windowTop >= windowHeight) {
+      addMyClass('.lazy', 'load')
+      i = store.length -1;
+
+    // else invoek lazy.js on first lazy element
+    } else {
+      addMyClass('#lazyEl-' + i, 'load');
+      i++;
+    }
 
     // add scroll event listener
 	  $j(window).scroll(function(){
 	  	windowTop = $j(window).scrollTop();
       store = getLazyElements();
       
-      // invoke lazy.js while scrolling
-      matchPosition(injectClass('load'));
+      // invoke lazy.js one element at a time
+      matchPosition(function(){
+        addMyClass('#lazyEl-' + i, 'load');
+      });
 
 	  });
   }
   
-  // if page has portfolio class
+  // if page has portfolio class, invoke image loop
   if ($j('.portfolio')) {
-  	//invoke imageLoop
     imageLoop(5000, 0);
   }
 
@@ -53,7 +62,6 @@ $j(document).ready(function(){
   
   // handle back-to-top click
 	$j('#btt').on('click', function(){
-    console.log('click btt');
     $j('html, body').animate({scrollTop: 0}, 1000);
   });
 
