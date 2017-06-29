@@ -19,10 +19,6 @@
     height: 200px
     overflow: hidden
 
-    +tablet
-      height: 100%
-      padding: 75px
-
     +tablet 
       height: 800px
       padding: 0 75px 140px 75px
@@ -41,20 +37,30 @@
     margin-bottom: 15px
 
     .co-image
-      height: 730px
-      width: calc(100% + 15px)
-      margin-left: -15px
-      padding-right: 15px
+      height: 200px
+
+      +tablet
+        height: 730px
+        width: calc(100% + 15px)
+        margin-left: -15px
+        padding-right: 15px
+      
 
   .wrapper:nth-of-type(2n+3)
-    height: 800px
-    padding: 75px
+
+    +tablet
+      height: 800px
+      padding: 75px
 
     .co-image
-      height: 650px
-      max-width: 680px
-      margin-left: auto
-      margin-right: auto
+      height: 200px
+      width: 100%
+
+      +tablet
+        height: 650px
+        max-width: 680px
+        margin-left: auto
+        margin-right: auto
 
 /* OBJECTS -> For styling objects */
 /* Includes cosmetic styles like color, typography, and borders */

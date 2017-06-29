@@ -24,13 +24,15 @@
     +tablet
       margin-top: 25px
 
+
   .grid:nth-child(4n+3)
     +tablet
       order: 2
-
+  
   .grid:nth-child(4n+4)
     +tablet
       order: 1
+
 
   .image-square
     height: 80vw
@@ -40,15 +42,16 @@
       height: 475px
       width: 475px
 
-  .copy-square
+  .copy-square:nth-of-type(even)
     width: 80vw
+    margin-bottom: 10px
 
     +tablet
       height: 475px
       width: 475px
 
 .copy-square
-  padding: 35px 45px
+  padding: 35px
 
   +tablet
     padding: 120px
