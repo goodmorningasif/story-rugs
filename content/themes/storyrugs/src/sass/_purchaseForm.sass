@@ -15,7 +15,6 @@
       margin: 20px auto
 
   form
-    +flex
     max-width: 900px
     margin-top: 50px
     margin-left: auto
@@ -25,21 +24,34 @@
       margin-bottom: 30px
       padding-left: 20px
 
-      +placeholder
+    p
+      +flex
+      width: 100%
     
     input
       height: 45px
 
-    .pname, .ptextarea
+    .pname, 
+    .ptextarea,
+    .psize, 
+    .ppurpose,
+    .pemail, 
+    .pphone
+      width: 100%
+
+    .text-289, 
+    .textarea-17 
       flex: 0 0 100%
 
-    .psize, .ppurpose
+    .text-290,
+    .text-291
       flex: 0 0 100%
 
       +tablet
         flex: 0 1 30%
 
-    .pemail, .pphone
+    .email-781,
+    .tel-574
       flex: 0 0 100%
 
       +tablet
@@ -59,14 +71,45 @@
     .ptextarea
       padding-top: 10px
 
+
 .confirmation
   margin-top: 20px
+
+
+  
+
+.purchase-form
+  position: relative
+
+  .overlay
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    z-index: -1
+
+  .overlay-toggle
+    z-index: 100
+
+  .wpcf7-not-valid-tip
+    margin-top: -25px
+    margin-bottom: 9px
+
 
 /* OBJECTS -> For styling objects */
 /* Includes cosmetic styles like color, typography, and borders */
 /* INCEPTION RULE: DO NOT nest more than 4  */
 
 .purchase-form
+  .overlay
+    opacity: 0
+    background-color: $white
+    transition: 0.4s opacity ease-out
+
+  .overlay-toggle
+    opacity: 0.78
+
   .form-header,
   .confirmation
     h3
@@ -111,4 +154,25 @@
     &:hover
       background-color: $white
       color: $darkgrey
+
+.purchase-form
+  .wpcf7-not-valid-tip
+    +gothbook
+    color: $rust
+    font-size: 0.55rem
+    letter-spacing: 0.05rem
+    line-height: 0.9rem
+    text-align: left
+    text-transform: uppercase 
+
+  .wpcf7-response-output
+    +gothbook
+    color: $darkgrey
+    font-size: 0.65rem
+    letter-spacing: 0.05rem
+    line-height: 0.9rem
+    text-align: center
+    text-transform: uppercase 
+    border: none
+
 

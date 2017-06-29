@@ -61,24 +61,24 @@ $j(document).ready(function(){
   });
   
   // handle back-to-top click
-	$j('#btt').on('click', function(){
+	$j('#btt').on('click', function(){3
     $j('html, body').animate({scrollTop: 0}, 1000);
   });
 
-  // handle form submission TEMP
-  $j('.purchase-form-form').on('submit', function(e){
-    e.preventDefault();
-    $j(this).fadeOut(500,function(){
-      $j(this).parent().append('<div class="confirmation"><h3>Thank you for your submission</h3><div>');
-    });
+  // handle form submission 
+  $j('#p_submit').on('submit', function(e){
+    if($j('.wpcf7-response-output').hasClass('wpcf7-mail-sent-ok')){
+      console.log('triggered on mail sent ok')
+      $j('#purchase-form-overlay').addClass('overlay-toggler');
+    }
   });
 
-  $j('.newsletter-form').on('submit', function(e){
-    e.preventDefault();
-    $j(this).fadeOut(500,function(){
-      $j(this).parent().append('<div class="confirmation"><h3>Thank you for your submission</h3><div>');
-    });
-  });
+  // $j('.newsletter-form').on('submit', function(e){
+  //   e.preventDefault();
+  //   $j(this).fadeOut(500,function(){
+  //     $j(this).parent().append('<div class="confirmation"><h3>Thank you for your submission</h3><div>');
+  //   });
+  // });
   
   // if single-product, handle sticky product description
   /*

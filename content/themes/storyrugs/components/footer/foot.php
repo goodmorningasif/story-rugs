@@ -64,9 +64,6 @@
 <div class="footer-signup">
   <div class="footer-signup-box">
 	  <h3>Stay In Touch!</h3>
-	  <form class="newsletter-form">
-	  	<input class="foot-form" type="email">
-	  	<input class="foot-form-signup border-box" type="submit" value="join"> 
-	  </form>
+	  <?php echo do_shortcode('[contact-form-7 id="199" title="Newsletter Signup Form"]'); ?>
   </div>
 </div>

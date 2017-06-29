@@ -14,19 +14,6 @@
   </div>
 </div>
 
-<form class="purchase-form-form">
-  <input class="purchase border-box pname" 
-    type="name" placeholder="name">
-  <input class="purchase border-box psize" 
-    type="text" placeholder="Size">
-  <input class="purchase border-box pemail" 
-    type="email" placeholder="email">
-  <input class="purchase border-box psize" 
-    type="text" placeholder="Purpose">
-  <input class="purchase border-box pphone" 
-    type="tel" placeholder="Phone">
-  <textarea class="purchase border-box ptextarea" 
-    rows="8" cols="50" placeholder="tell us about your story"></textarea>
-  <input class="purchase border-box psubmit" 
-    type="submit" value="Submit Inquiry">
-</form>
+<div class='overlay' id="purchase-form-overlay">&nbsp;</div>
+
+<?php echo do_shortcode('[contact-form-7 id="5" title="Purchase Reproduction Form"]'); ?>

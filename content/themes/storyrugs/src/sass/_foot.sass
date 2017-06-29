@@ -71,12 +71,15 @@ footer
   .foot-form
     width: 100%
     margin-top: 20px
+    padding-bottom: 5px
 
   .foot-form-signup
     display: block
     margin: 20px auto
 
-
+.footer-signup-box
+  .wpcf7-not-valid-tip
+    padding-top: 8px
 
 /* OBJECTS -> For styling objects */
 /* Includes cosmetic styles like color, typography, and borders */
@@ -114,10 +117,18 @@ footer
     letter-spacing: 0.05rem
 
   .foot-form
+    +gothbook
+    color: $darkgrey
+    font-size: 0.55rem
+    letter-spacing: 0.1rem
+    text-align: center
+    text-transform: uppercase
     border-top: none
     border-left: none
     border-right: none
     border-bottom: 1px solid $darkgrey
+
+    +placeholder
   
   .foot-form-signup
     +gothbook
@@ -131,6 +142,26 @@ footer
     &:hover
       background-color: $darkgrey
       color: $white
+
+.footer-signup-box
+  .wpcf7-not-valid-tip
+    +gothbook
+    color: $rust
+    font-size: 0.55rem
+    letter-spacing: 0.05rem
+    line-height: 0.9rem
+    text-align: center
+    text-transform: uppercase 
+
+  .wpcf7-response-output
+    +gothbook
+    color: $darkgrey
+    font-size: 0.65rem
+    letter-spacing: 0.05rem
+    line-height: 0.9rem
+    text-align: center
+    text-transform: uppercase 
+    border: none
 
 
 
