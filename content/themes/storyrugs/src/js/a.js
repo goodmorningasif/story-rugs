@@ -66,38 +66,11 @@ $j(document).ready(function(){
   });
 
   // handle form submission 
-  $j('#p_submit').on('submit', function(e){
-    if($j('.wpcf7-response-output').hasClass('wpcf7-mail-sent-ok')){
-      console.log('triggered on mail sent ok')
-      $j('#purchase-form-overlay').addClass('overlay-toggler');
-    }
+  document.addEventListener('wpcf7mailsent', function(){
+    $j('#purchase-form-overlay').addClass('overlay-toggle');
   });
 
-  // $j('.newsletter-form').on('submit', function(e){
-  //   e.preventDefault();
-  //   $j(this).fadeOut(500,function(){
-  //     $j(this).parent().append('<div class="confirmation"><h3>Thank you for your submission</h3><div>');
-  //   });
-  // });
-  
-  // if single-product, handle sticky product description
-  /*
-  if ($j('body').hasClass('single-product') ) {
-    var navBottom = $j('nav').height(); 
-    // add scroll event listner
-    $j(window).scroll(function(){
-      windowTop = $j(window).scrollTop();
 
-      if(windowTop > navBottom) {
-        $j('.content-floater').addClass('zero-top');
-        console.log('true');
-      } else {
-        $j('.content-floater').removeClass('zero-top');
-      }
-
-    }); 
-  }
-  */
 
 
 });
