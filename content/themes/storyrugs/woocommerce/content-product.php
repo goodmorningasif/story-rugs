@@ -49,6 +49,13 @@
 			    <?php echo $price; ?>
 			  </span>	
 		  </div>
+		  <div class="product-sold">
+	      <span class="onsale">
+		    <?php if(!$product->is_in_stock()) :?>
+		      Sold
+		    <?php endif; ?>
+		    </span>	
+		  </div>
 		</div>
 	</a>
 </li>

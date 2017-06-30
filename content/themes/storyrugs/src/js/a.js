@@ -19,9 +19,12 @@ $j(document).ready(function(){
 	// invoke widont
 	widont();
   
+  // store lazy elements
+   store = getLazyElements('.lazy');
 
-	// store lazy elements
-	store = getLazyElements();
+  // invoke lazy.js to logo
+  setTimeout(function(){
+    addMyClass('.lazy-logo', 'load')}, 500);
 
   // if store, invoke lazy elements
   if (store.length) {
@@ -37,10 +40,11 @@ $j(document).ready(function(){
       i++;
     }
 
+
     // add scroll event listener
 	  $j(window).scroll(function(){
 	  	windowTop = $j(window).scrollTop();
-      store = getLazyElements();
+      store = getLazyElements('.lazy');
       
       // invoke lazy.js one element at a time
       matchPosition(function(){
@@ -49,7 +53,15 @@ $j(document).ready(function(){
 
 	  });
   }
+
+  if($j('body').hasClass('archive')) {
+    // invoke lazy.js to logo
+    addMyClass('.lazy-products', 'load')
+  }
   
+
+  
+
   // if page has portfolio class, invoke image loop
   if ($j('.portfolio')) {
     imageLoop(5000, 0);

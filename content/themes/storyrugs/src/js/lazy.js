@@ -16,15 +16,15 @@
 *
 */
 
-function getLazyElements(){
+function getLazyElements(lazyEl){
 	// define vocab
 	var store = [];
   var row;
-  // 
+
   var adjustment = windowHeight - windowHeight/3;
 
   // loop through lazy elements
-	$j('.lazy').each(function(index, value){
+	$j(lazyEl).each(function(index, value){
 		row = {};
 		var className = value.className.split(" ");
 		row.class = className[0];
