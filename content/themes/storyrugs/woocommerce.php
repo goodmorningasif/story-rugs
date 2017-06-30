@@ -14,7 +14,7 @@
 
   get_header(); ?>
 
-  <!-- ==== SECTION: PRODUCTS ==== -->
+  <!-- ==== SECTION: PRODUCT HEAD ==== -->
 
 	<?php if(is_singular('product')) :
 		while (have_posts()) : 
@@ -23,8 +23,10 @@
 		endwhile;
 	else :
     /* ==== START WOOCOMMERCE LOOP ==== */
-     wc_get_template_part('content', 'head'); 
-		 if (have_posts()) : 
+     wc_get_template_part('content', 'head'); ?>
+    <!-- ==== SECTION: PRODUCT LOOP ==== -->
+    <section class="product-loop lazy">
+		 <?php if (have_posts()) : 
 			woocommerce_product_loop_start(); 
 				woocommerce_product_subcategories(); 
 				while(have_posts()) : 
@@ -36,6 +38,7 @@
 		 /* ==== END WOOCOMMERCE LOOP ==== */
 		 elseif ( !woocommerce_product_subcategories(array('before' => woocommerce_product_loop_start(false), 'after' => woocommerce_product_loop_end(false)))) : 
 			do_action('woocommerce_no_products_found'); 
-		 endif;
-	endif;
+		 endif; ?>
+		 </section>
+	<?php endif;
   get_footer();

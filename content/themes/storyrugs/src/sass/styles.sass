@@ -39,17 +39,43 @@ img
   border-image-outset: 1px
 
 .lazy
+  position: relative
   opacity: 0
-  transition: 0.9s opacity cubic-bezier(.17,.56,1,1)
-  transition-delay: 0.2s
+  -webkit-transform: translateX(0) translateY(140px)
+  -moz-transform: translateX(0) translateY(140px)
+  -o-transform: translateX(0) translateY(140px)
+  -ms-transform: translateX(0) translateY(140px)
+  transform: translateX(0) translateY(140px)
+  transition: 2s opacity ease-in-out, 2s transform cubic-bezier(0.215, 0.61, 0.355, 1)
 
 
 .lazy-gallery
   opacity: 0
-  transition: 1.2s opacity ease-in-out
+  transition: 2s opacity cubic-bezier(0.455, 0.03, 0.515, 0.955)
+
+  &:before
+    content: " "
+    display: block
+    width: 100%
+    margin-top: 140px
+    transition: 2s margin cubic-bezier(0.68, -0.55, 0.265, 1.55)
+
+.lazy-logo
+  -webkit-transform: translateX(0) translateY(140px)
+  -moz-transform: translateX(0) translateY(140px)
+  -o-transform: translateX(0) translateY(140px)
+  -ms-transform: translateX(0) translateY(140px)
+  transform: translateX(0) translateY(140px)
+
 
 .load
   opacity: 1
+  -webkit-transform: translateX(0) translateY(0)
+  -moz-transform: translateX(0) translateY(0)
+  -o-transform: translateX(0) translateY(0)
+  -ms-transform: translateX(0) translateY(0)
+  transform: translateX(0) translateY(0)
+
 
 /* Styles ... */
 @import 'borders'

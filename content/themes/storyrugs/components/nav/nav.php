@@ -7,7 +7,7 @@
 
 ?>
 
-<div class="customer-info">
+<div class="customer-info lazy-cart">
 	<div class="account">
     <a href="http://<?php echo $GLOBALS['root']; ?>/my-account">
   	  Account
@@ -23,7 +23,7 @@
 	</div>
 </div>
 
-<div class="logo">
+<div class="logo lazy-logo">
   <a href="http://<?php echo $GLOBALS['root']; ?>">
     <?php echo file_get_contents($logo['url']); ?>
   </a>
