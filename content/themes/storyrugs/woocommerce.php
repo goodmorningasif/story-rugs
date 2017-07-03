@@ -25,7 +25,7 @@
     /* ==== START WOOCOMMERCE LOOP ==== */
      wc_get_template_part('content', 'head'); ?>
     <!-- ==== SECTION: PRODUCT LOOP ==== -->
-    <section class="product-loop lazy-products">
+    <section class="product-loop">
 		 <?php if (have_posts()) : 
 			woocommerce_product_loop_start(); 
 				woocommerce_product_subcategories(); 

@@ -7,6 +7,7 @@
 var $j = jQuery.noConflict();
 var windowTop = $j(window).scrollTop();
 var windowHeight = $j(window).height();
+var footerTop = $j('.back-to-top').offset().top
 var i = 0;
 var store;
 var currentEl;
@@ -25,6 +26,18 @@ $j(document).ready(function(){
   // invoke lazy.js to logo
   setTimeout(function(){
     addMyClass('.lazy-logo', 'load')}, 500);
+
+  // invoke lazy.js to cart
+  setTimeout(function(){
+    addMyClass('.lazy-cart', 'load')}, 1000);
+
+  // invoke lazy.js to footer
+  setTimeout(function(){
+    addMyClass('.lazy-footer', 'load')}, 1500);
+
+  if (footerTop < windowHeight) {
+    addMyClass('.back-to-top', 'hide');
+  }
 
   // if store, invoke lazy elements
   if (store.length) {

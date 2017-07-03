@@ -26,7 +26,7 @@
 </section>
 
 <!-- ==== SECTION: FOOTER ==== -->
-<footer>
+<footer class="lazy-footer">
   <?php get_template_part('/components/footer/foot'); ?>
 </footer>
 

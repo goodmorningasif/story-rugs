@@ -62,11 +62,11 @@ img
 
 .lazy-logo
   opacity: 0
-  -webkit-transform: translateX(0) translateY(-140px)
-  -moz-transform: translateX(0) translateY(-140px)
-  -o-transform: translateX(0) translateY(-140px)
-  -ms-transform: translateX(0) translateY(-140px)
-  transform: translateX(0) translateY(-140px)
+  -webkit-transform: translateX(0) translateY(-30px)
+  -moz-transform: translateX(0) translateY(-30px)
+  -o-transform: translateX(0) translateY(-30px)
+  -ms-transform: translateX(0) translateY(-30px)
+  transform: translateX(0) translateY(-30px)
   transition: 1.5s opacity ease-in-out, 1.5s transform cubic-bezier(0.215, 0.61, 0.355, 1)
 
 .lazy-products
@@ -78,11 +78,17 @@ img
   -ms-transform: translateX(0) translateY(140px)
   transform: translateX(0) translateY(140px)
   transition: 2s opacity ease-in-out, 2s transform cubic-bezier(0.215, 0.61, 0.355, 1)
-  // transition-delay: 0.5s
 
-@for $num from 1 to 40
-  .lazy-products:nth-child(#{$num})
-    transition-delay: $num * 2s
+@for $i from 1 to 40
+  $num: $i/2
+  $prevNum: ($i - 1)/2
+  $n: ceil($i/2)
+  .lazy-products:nth-child(#{$i})
+    @if $n == ($i/2)
+      transition-delay: #{$prevNum}s
+    @else 
+      transition-delay: #{$num}s
+
 
 .lazy-single-product
   opacity: 1
@@ -92,6 +98,18 @@ img
   -ms-transform: translateX(v) translateY(0)
   transform: translateX(-140px) translateY(0)
   transition: 2s opacity ease-in-out, 2s transform cubic-bezier(0.215, 0.61, 0.355, 1)
+
+.lazy-cart
+  opacity: 0
+  transition: 2s opacity ease-in-out
+
+.lazy-footer
+  opacity: 0
+  transition: .5s opacity ease-in-out
+
+.hide
+  opacity: 0
+
 
 .load
   opacity: 1

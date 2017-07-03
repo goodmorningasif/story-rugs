@@ -29,8 +29,8 @@
 	// price variable
 	$price = $product->get_price_html(); ?>
 
-<li <?php post_class(); ?>>
-  <a href="<?php echo get_the_permalink(); ?>" >
+<li <?php post_class('lazy-products'); ?>>
+  <a href="<?php echo get_the_permalink(); ?>">
 	  <div class="product-image-wrapper" 
 	    style="background-image: url(<?php echo $thumb_url ?>)">
       <div class="product-text">
