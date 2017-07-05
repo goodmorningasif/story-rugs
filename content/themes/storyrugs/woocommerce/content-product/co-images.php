@@ -10,7 +10,7 @@
   	the_row(); 
     $image = get_sub_field('co_repeater-image'); ?>
   <div class="wrapper">
-    <div class="co-image"
+    <div class="co-image lazy-images"
       style="background-image: url(<?php echo $image['url']; ?>)">
     </div>
   </div>

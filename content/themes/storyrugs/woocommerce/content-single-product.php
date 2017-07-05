@@ -32,7 +32,7 @@
 <div class="collection-wrapper">
 	<div id="product-<?php the_ID(); ?>" 
 	  <?php post_class(); ?>> 
-	  <div class="co-images">
+	  <div class="co-images lazy-bg">
       <?php include(locate_template('woocommerce/content-product/co-images.php')); ?>
 	  </div>
 		<div class="summary entry-summary co-content">

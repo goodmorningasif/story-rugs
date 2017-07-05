@@ -41,24 +41,17 @@ img
 .lazy
   position: relative
   opacity: 0
-  -webkit-transform: translateX(0) translateY(140px)
-  -moz-transform: translateX(0) translateY(140px)
-  -o-transform: translateX(0) translateY(140px)
-  -ms-transform: translateX(0) translateY(140px)
-  transform: translateX(0) translateY(140px)
+  -webkit-transform: translateX(0) translateY(100px)
+  -moz-transform: translateX(0) translateY(100px)
+  -o-transform: translateX(0) translateY(100px)
+  -ms-transform: translateX(0) translateY(100px)
+  transform: translateX(0) translateY(100px)
   transition: 2s opacity ease-in-out, 2s transform cubic-bezier(0.215, 0.61, 0.355, 1)
 
 
 .lazy-gallery
   opacity: 0
   transition: 2s opacity cubic-bezier(0.455, 0.03, 0.515, 0.955)
-
-  &:before
-    content: " "
-    display: block
-    width: 100%
-    margin-top: 140px
-    transition: 2s margin cubic-bezier(0.68, -0.55, 0.265, 1.55)
 
 .lazy-logo
   opacity: 0
@@ -72,11 +65,11 @@ img
 .lazy-products
   position: relative
   opacity: 0
-  -webkit-transform: translateX(0) translateY(140px)
-  -moz-transform: translateX(0) translateY(140px)
-  -o-transform: translateX(0) translateY(140px)
-  -ms-transform: translateX(0) translateY(140px)
-  transform: translateX(0) translateY(140px)
+  -webkit-transform: translateX(0) translateY(100px)
+  -moz-transform: translateX(0) translateY(100px)
+  -o-transform: translateX(0) translateY(100px)
+  -ms-transform: translateX(0) translateY(100px)
+  transform: translateX(0) translateY(100px)
   transition: 2s opacity ease-in-out, 2s transform cubic-bezier(0.215, 0.61, 0.355, 1)
 
 @for $i from 1 to 40
@@ -90,15 +83,6 @@ img
       transition-delay: #{$num}s
 
 
-.lazy-single-product
-  opacity: 1
-  -webkit-transform: translateX(-140px) translateY(0)
-  -moz-transform: translateX(-140px) translateY(0)
-  -o-transform: translateX(-140px) translateY(0)
-  -ms-transform: translateX(v) translateY(0)
-  transform: translateX(-140px) translateY(0)
-  transition: 2s opacity ease-in-out, 2s transform cubic-bezier(0.215, 0.61, 0.355, 1)
-
 .lazy-cart
   opacity: 0
   transition: 2s opacity ease-in-out
@@ -106,6 +90,28 @@ img
 .lazy-footer
   opacity: 0
   transition: .5s opacity ease-in-out
+
+.lazy-images
+  opacity: 0
+  transition: 2s opacity cubic-bezier(0.19, 1, 0.22, 1)
+  -webkit-transition: 1s opacity cubic-bezier(0.19, 1, 0.22, 1)
+  
+@for $i from 1 to 10
+  $num: $i/2
+  .wrapper:nth-of-type(#{$i})
+    .lazy-images
+      transition-delay: #{$num}s
+
+.lazy-bg
+  -webkit-transform: translateX(-2000px) translateY(0)
+  -moz-transform: translateX(-2000px) translateY(0)
+  -o-transform: translateX(-2000px) translateY(0)
+  -ms-transform: translateX(-2000px) translateY(0)
+  transform: translateX(-2000px) translateY(0)
+  transition: 2s transform cubic-bezier(0.19, 1, 0.22, 1)
+  -webkit-transition: 2s transform cubic-bezier(0.19, 1, 0.22, 1)
+
+
 
 .hide
   opacity: 0

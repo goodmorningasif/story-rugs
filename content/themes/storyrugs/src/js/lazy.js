@@ -21,7 +21,7 @@ function getLazyElements(lazyEl){
 	var store = [];
   var row;
 
-  var adjustment = windowHeight - windowHeight/3;
+  var adjustment = windowHeight - windowHeight/5;
 
   // loop through lazy elements
 	$j(lazyEl).each(function(index, value){

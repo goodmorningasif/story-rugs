@@ -67,11 +67,20 @@ $j(document).ready(function(){
 	  });
   }
 
+
+  // if page has archive class
   if($j('body').hasClass('archive')) {
     // invoke lazy.js to logo
     addMyClass('.lazy-products', 'load')
   }
-  
+
+    // if page has single-product class
+  if($j('body').hasClass('single-product')) {
+    // invoke lazy.js to logo
+    addMyClass('.lazy-bg', 'load');
+    setTimeout(function(){
+      addMyClass('.lazy-images', 'load')}, 1500);
+  }
 
   
 
