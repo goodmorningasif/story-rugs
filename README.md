@@ -1,4 +1,4 @@
-# []
+# Story Rugs
 Copyright 2017 SDCO Partners
 
 1. Getting Started 
@@ -24,7 +24,7 @@ Copyright 2017 SDCO Partners
 ### Folder Structer
 
 ```
-|--/[INIT]/
+|--/storyrugs/
 |  |
 |  |--/assets/
 |  |
@@ -164,7 +164,7 @@ For All other files ...
 
 ## Team 
   
-  * PROJECT MANAGER   :   Paige
-  * UX/UI DESIGNER    :   Courtney 
+  * PROJECT MANAGER   :   Paige Feighley
+  * UX/UI DESIGNER    :   Courtney Rowson
   * DEVELOPER         :   Asifuzzaman Ahmed
 

@@ -15,8 +15,6 @@
 ?>
 
 
-</body><!-- end -->
-</html>
 
 <!-- ==== SECTION: BACK TO TOP ==== -->
 <section class="back-to-top">
@@ -37,5 +35,8 @@
   <div class="bottom"></div>
   <div class="left"></div>
 </section>
+
+</body><!-- end -->
+</html>
 
 <?php wp_footer();
