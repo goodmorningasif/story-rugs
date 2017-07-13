@@ -6,7 +6,9 @@
 
 var $j = jQuery.noConflict();
 var windowTop = $j(window).scrollTop();
-var windowHeight = $j(window).height();
+var adjustment = 0.9375;
+var lazyPadding = 100;
+var windowHeight = $j(window).height() + lazyPadding;
 var footerTop = $j('.back-to-top').offset().top
 var i = 0;
 var store;
@@ -56,11 +58,12 @@ $j(document).ready(function(){
 
     // add scroll event listener
 	  $j(window).scroll(function(){
-	  	windowTop = $j(window).scrollTop();
+	  	var scrollHeight = $j(window).scrollTop();
+      var breakPoint = windowHeight * adjustment + scrollHeight
       store = getLazyElements('.lazy');
       
       // invoke lazy.js one element at a time
-      matchPosition(function(){
+      matchPosition(breakPoint, function(){
         addMyClass('#lazyEl-' + i, 'load');
       });
 

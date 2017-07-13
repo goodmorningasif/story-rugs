@@ -21,14 +21,12 @@ function getLazyElements(lazyEl){
 	var store = [];
   var row;
 
-  var adjustment = windowHeight - windowHeight/5;
-
   // loop through lazy elements
 	$j(lazyEl).each(function(index, value){
-		row = {};
+		row = {}; 
 		var className = value.className.split(" ");
 		row.class = className[0];
-		row.top = $j(value).offset().top - adjustment; 
+		row.top = $j(value).offset().top; 
 		row.toggle = false;
     
     $j(value).attr('id', 'lazyEl-' + index);
@@ -48,9 +46,9 @@ function getLazyElements(lazyEl){
 *
 */
 
-function matchPosition(callback){
+function matchPosition(height, callback){
 	if(store[i]){
-		if (windowTop > store[i].top) {
+		if (height > store[i].top) {
   		callback();
   		i++;
   	}
