@@ -35,8 +35,7 @@
   <div class="bottom"></div>
   <div class="left"></div>
 </section>
+<?php wp_footer(); ?>
 
 </body><!-- end -->
 </html>
-
-<?php wp_footer();

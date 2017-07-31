@@ -1,0 +1,141 @@
+/*  _confirmation.sass */
+
+/* PAGE CONTEXT -> For positioning items */
+/* includes positioning styles like display, padding, margin, height */
+/* INCEPTION RULE: DO NOT nest more than 4  */
+
+.woocommerce-order-overview,
+.woocommerce-order-details__title,
+.woocommerce-customer-details h2,
+.woocommerce-column--billing-address h3,
+.woocommerce-column--shipping-address h3
+  margin-top: 30px
+
+.woocommerce-table--customer-details
+  margin: 0 auto
+
+.woocommerce-order-details
+  .woocommerce-table--order-details
+    margin: 0 auto
+
+    .woocommerce-table__product-name,
+    .woocommerce-table__product-total,
+    tfoot tr th,
+    tfoot tr td,
+      padding-top: 5px
+      padding-bottom: 5px
+
+
+/* OBJECTS -> For styling objects */
+/* Includes cosmetic styles like color, typography, and borders */
+/* INCEPTION RULE: DO NOT nest more than 4  */
+
+
+.woocommerce-order,
+.woocommerce-MyAccount-content
+  .woocommerce-notice 
+    font-family: "Miller Ban Rom",Georgia,serif
+    font-style: Normal
+    font-weight: Normal
+    color: #333
+    font-size: 1.1rem
+    letter-spacing: .005rem
+    line-height: 1.9rem
+    text-align: center
+    text-transform: initial
+    border: none
+  
+  .woocommerce-order-overview 
+    .woocommerce-order-overview__order
+      font-family: "Gotham SSm A","Gotham SSm B",Helvetica,sans-serif
+      font-style: normal
+      font-weight: 500
+      font-size: .75rem
+      letter-spacing: .1rem
+      text-align: center
+      text-transform: uppercase
+
+    .woocommerce-order-overview__date,
+    .woocommerce-order-overview__total,
+    .woocommerce-order-overview__payment-method
+
+      font-family: "Miller Ban Rom",Georgia,serif
+      font-style: Normal
+      font-weight: Normal
+      color: #333
+      font-size: .8rem
+      letter-spacing: .005rem
+      line-height: 1.2rem
+      text-align: center
+
+
+  .woocommerce-order-details,
+  .woocommerce-order-details__title
+    font-family: "Miller Ban Rom",Georgia,serif
+    font-style: Normal
+    font-weight: Normal
+    color: #333
+    font-size: 1.1rem
+    letter-spacing: .005rem
+    line-height: 1.9rem
+    text-align: center
+    text-transform: initial
+    border: none
+
+.woocommerce-table--order-details
+  thead
+    font-family: "Gotham SSm A","Gotham SSm B",Helvetica,sans-serif
+    font-style: normal
+    font-weight: 500
+    font-size: .75rem
+    letter-spacing: .1rem
+    text-align: center
+    text-transform: uppercase
+
+  tbody
+    font-family: "Miller Ban Rom",Georgia,serif
+    font-style: Normal
+    font-weight: Normal
+    color: #333
+    font-size: .8rem
+    letter-spacing: .005rem
+    line-height: 1.2rem
+    text-align: center
+
+  tfoot
+    font-family: "Miller Ban Rom",Georgia,serif;
+    font-style: Normal;
+    font-weight: Normal;
+    color: #333;
+    font-size: .8rem;
+    letter-spacing: .005rem;
+    line-height: 1.2rem;
+    text-align: center;
+
+.woocommerce-table--customer-details,
+  font-family: "Miller Ban Rom",Georgia,serif
+  font-style: Normal
+  font-weight: Normal
+  color: #333
+  font-size: .8rem
+  letter-spacing: .005rem
+  line-height: 1.2rem
+  text-align: center
+
+.woocommerce-columns--addresses
+  .woocommerce-column--billing-address,
+  .woocommerce-column--shipping-address
+    address
+      font-family: "Miller Ban Rom",Georgia,serif
+      font-style: Normal
+      font-weight: Normal
+      color: #333
+      font-size: .8rem
+      letter-spacing: .005rem
+      line-height: 1.2rem
+      text-align: center   
+
+.woocommerce
+  .woocommerce-order
+    strong
+      color: $rust

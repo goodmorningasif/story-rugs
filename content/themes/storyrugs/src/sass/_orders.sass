@@ -1,0 +1,40 @@
+/*  _confirmation.sass */
+
+/* PAGE CONTEXT -> For positioning items */
+/* includes positioning styles like display, padding, margin, height */
+/* INCEPTION RULE: DO NOT nest more than 4  */
+
+.woocommerce-MyAccount-orders
+  margin: 0 auto
+
+/* OBJECTS -> For styling objects */
+/* Includes cosmetic styles like color, typography, and borders */
+/* INCEPTION RULE: DO NOT nest more than 4  */
+
+.woocommerce-MyAccount-orders
+  thead
+    font-family: "Gotham SSm A","Gotham SSm B",Helvetica,sans-serif
+    font-style: normal
+    font-weight: 500
+    font-size: .75rem
+    letter-spacing: .1rem
+    text-align: center
+    text-transform: uppercase
+
+  tbody
+    font-family: "Miller Ban Rom",Georgia,serif
+    font-style: Normal
+    font-weight: Normal
+    color: #333
+    font-size: .8rem
+    letter-spacing: .005rem
+    line-height: 1.2rem
+    text-align: center
+
+  tbody a,
+  thead a
+    color: $rust
+    transition: 0.4s color
+
+    &:hover
+      color: $black
