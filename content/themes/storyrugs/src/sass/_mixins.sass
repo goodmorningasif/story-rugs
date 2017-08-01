@@ -20,9 +20,19 @@ $break-small: 500px
 /* Flexbox */
 =flex($a: flex, $b: space-between, $c: flex-start, $d: wrap)
   display: $a
+  display: -moz-box
+  display: -ms-flexbox
+  display: -webkit-flex
   justify-content: $b
+  -webkit-justify-content: $b
   align-items: $c
+  -webkit-align-items: $c
+  -moz-align-items: $c
+  -ms-align-items: $c
   flex-wrap: $d
+  -webkit-flex-wrap: $d
+  -moz-flex-wrap: $d
+  -ms-flex-wrap: $d
 
 /* Background Image Settings */
 =img($a: no-repeat, $b: center, $c: cover)
