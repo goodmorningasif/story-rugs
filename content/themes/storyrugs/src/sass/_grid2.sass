@@ -51,8 +51,14 @@
       width: 475px
       margin-bottom: 0
 
+    +browser(Trident)
+
 .copy-square
   padding: 35px
+
+  +browser(Trident)
+    padding-left: 0
+    padding-right: 0
 
   +tablet
     padding: 120px
@@ -62,6 +68,10 @@
     margin: 0 auto
     padding: 5px
     margin-top: 20px
+    width: 100%
+
+    +browser(Trident)
+      max-width: 200px
 
 /* OBJECTS -> For styling objects */
 /* Includes cosmetic styles like color, typography, and borders */

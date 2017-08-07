@@ -29,31 +29,38 @@ Copyright 2017 SDCO Partners
 |  |--/assets/
 |  |
 |  |--/components/
+|  |  └-- /archives/
+|  |  └-- /footer/
+|  |  └-- /main/
+|  |  └-- /nav/
+|  |  └-- /text/
 |  |
 |  |--/prod/
 |  |  └-- script.js
 |  |  └-- styles.css
 |  |
-|  |--/src/
-|  |  | 
-|  |  |--/js/
-|  |  |  └-- a.js
-|  |  |
-|  |  |--/sass/
-|  |  |  └-- _mixins.sass
-|  |  |  └-- _reset.sass
-|  |  |  └-- _variables.sass
-|  |  |  └-- styles.sass
-|  |  | 
+|  |--/src/ 
+|  |  └--/js/
+|  |  └--/sass/
+|  |  
+|  |--/woocommerce/ 
+|  |  └--/content-product/
+|  |  └--/myaccount/
+|  |  └--/single-product/
+|  |  └--/single-reproduction/
+|  |  
 └-- 404.php
 └-- config.php
 └-- footer.php
-└-- function.php
+└-- functions.php
 └-- header.php
 └-- index.php
 └-- sidebar.php
-└-- README.txt
+└-- single-reproduction.php
 └-- style.css 
+└-- tmpl-text.php
+└-- woocommerce.php
+└-- wooloop.php
 ```
 
 ### Starting With [INIT]
@@ -158,8 +165,19 @@ For All other files ...
 
 ### Feature Documentation
 
+#### Lazy Loading Content
+
+Lazy loading is done through the file `lazy.js`. The main function `getLazyElements` loops through all DOM elements with the class 'lazy', pulls each element's top position, and returns an array of data for use later. On `a.js`, this data is stored as the global variable `store`. `matchPostion` utilized this data to match if the current window height matches the top position of a 'lazy' element, then executes a callback that generally adds the class 'load'. 
+
+Besides this, most of the animation heavy-lifting is done via css. 
+
+#### Widont
+
+`widont.js` loops through all elements with the class 'widont', breaks up the text into an array, re-joins the array into a text and adds a non-breaking space between the last two items in the array.
 
 ## Known Bugs
+
+ * IE 11 does not handle the border-image property well. Perhaps different settings are required but currently we're defaulting to solid stroke and no border-image.
 
 
 ## Team 
