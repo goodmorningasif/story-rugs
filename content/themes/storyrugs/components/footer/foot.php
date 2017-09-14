@@ -57,7 +57,7 @@
 	
 	<div class="copyright">
 		Copyright <?php echo date("Y"); ?> Story Rugs &nbsp; &#124; 
-		&nbsp;  917-683-6335 &nbsp; &#124; 
+		&nbsp;  347-574-9711&nbsp; &#124; 
 		&nbsp; Site By <a href="http://sdcopartners.com">SDCO Partners</a>
 	</div>
 </div>
